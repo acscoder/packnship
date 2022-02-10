@@ -1,4 +1,6 @@
 import Link from 'next/link'
+import Script from 'next/script'
+
 export default function Footer({address,email,hotline}) {
     const parse = require('html-react-parser');
     return ( 
@@ -37,10 +39,35 @@ export default function Footer({address,email,hotline}) {
     </div>
     </footer>
     <div className="text-center w-full fixed sm:bottom-1 bottom-0 left-0 " id="show-footer">
-        <button className="transition">
+        <button className="transition" id="as_show_footer">
           <span className="icon-chevron-down mx-auto text-3xl"></span>
         </button>
     </div>
+
+    <Script
+        id="jquery"
+        strategy="lazyOnload"
+        src="https://code.jquery.com/jquery-1.12.4.min.js" 
+        onLoad={() => {
+            
+            jQuery('#as_show_footer').on('click',function(){
+                var _this = jQuery(this);
+                if(jQuery('#footer-bar').hasClass('hidden')){
+                    jQuery('#footer-bar').removeClass('hidden');
+                    jQuery('#footer-bar').show();
+                    _this.addClass('rotate-180');
+                    document.getElementById("footer-bar").scrollIntoView({behavior: "smooth"});
+                    }else{
+                        jQuery('#footer-bar').fadeOut('slow',function(){
+                            jQuery('#footer-bar').addClass('hidden');
+                            _this.removeClass('rotate-180');
+                        });
+                    }
+            });
+           
+        }}
+      />
+
     </>
     )
 }

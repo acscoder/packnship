@@ -6,6 +6,7 @@ import { useRouter } from 'next/router'
 import Footer from '../components/footer'
 import Button from '../components/button'
 
+
 function HomePage({ data }) {
     const router = useRouter()
   const { locale, locales, defaultLocale } = router
