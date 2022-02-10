@@ -4,7 +4,7 @@ module.exports = {
     defaultLocale: 'de',
     localeDetection: false,
   },
- 
+  trailingSlash: true,
   images: {
     domains: ['packnship.digitalonda.com']
   },

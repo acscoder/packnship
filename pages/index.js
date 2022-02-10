@@ -29,7 +29,8 @@ function HomePage({ options,content }) {
                         </div>
                         <div className="py-10 lg:inline-flex lg:items-center">
                             <div className="float-right inline-flex items-center">
-                                <div className="text-black font-bold uppercase text-lg lg:text-2xl"><a href="https://packnship.digitalonda.com/demo/">DE</a>/<a href="https://packnship.digitalonda.com/demo/en">EN</a></div>
+                                <div className="text-black font-bold uppercase text-lg lg:text-2xl">
+                                <Link href="/" locale="de"><a>DE</a></Link>/<Link href="/" locale="en"><a>EN</a></Link></div>
                                 <a className="xl:ml-10 ml-5 block xl:w-24 w-12" href="https://packnship.digitalonda.com/demo/how-it-works/"><img src="./images/faltplan-weiss.svg" /></a>
                             </div>
                         </div>
@@ -63,14 +64,14 @@ function HomePage({ options,content }) {
   )
 }
 
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
   
     //context.locale
     //resolvedUrl
     const res_option = await fetch(process.env.NEXT_PUBLIC_WORDPRESS_SITE_URL+'/wp-content/themes/onda/data/options.json')
     const options = await res_option.json()
   
-    const res_content = await fetch(process.env.NEXT_PUBLIC_WORDPRESS_SITE_URL)
+    const res_content = await fetch(process.env.NEXT_PUBLIC_WORDPRESS_SITE_URL+"?lang="+context.locale)
     const content = await res_content.json()
 
     return { props: { options,content } }
