@@ -1,3 +1,4 @@
+import Link from 'next/link'
 export default function Footer({address,email,hotline}) {
     const parse = require('html-react-parser');
     return ( 
@@ -9,8 +10,11 @@ export default function Footer({address,email,hotline}) {
                 <div className="sm:grid sm:grid-cols-4 sm:gap-x-20 sm:inline-flex h-full items-center sm:text-left text-center sm:py-0 py-5">
                     <div className="col-span-2 py-2">
                         <div className="logo">
-                            <a className="text-6xl" href="https://packnship.digitalonda.com/demo/"><span className="icon-logo"></span></a>
-                       </div></div>
+                        <Link href="/">
+                            <a className="text-6xl"><span className="icon-logo"></span></a>
+                        </Link>
+                       </div>
+                    </div>
                     <div className="col-span-1 py-2">
                         <div className="h-full inline-flex items-center">
                             <div className="text-base lg:text-2xl font-normal">
