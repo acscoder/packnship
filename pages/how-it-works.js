@@ -118,11 +118,7 @@ function HIWPage({ data }) {
 </div>
 
     <Footer address={data.options.address} email={data.options.email} hotline={data.options.hotline}/>
-    <Script
-        id="hiw"
-        strategy="lazyOnload"
-        src="/js/hiw.js"        
-      />
+    
     </>
   )
 }
