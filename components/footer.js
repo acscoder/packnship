@@ -49,20 +49,22 @@ export default function Footer({address,email,hotline}) {
         strategy="lazyOnload"
         src="https://code.jquery.com/jquery-1.12.4.min.js" 
         onLoad={() => {
-            
-            jQuery('#as_show_footer').on('click',function(){
+        
+            jQuery('body,html').on('click','#as_show_footer',function(e){
+                e.preventDefault();
                 var _this = jQuery(this);
                 if(jQuery('#footer-bar').hasClass('hidden')){
                     jQuery('#footer-bar').removeClass('hidden');
                     jQuery('#footer-bar').show();
                     _this.addClass('rotate-180');
                     document.getElementById("footer-bar").scrollIntoView({behavior: "smooth"});
-                    }else{
-                        jQuery('#footer-bar').fadeOut('slow',function(){
-                            jQuery('#footer-bar').addClass('hidden');
-                            _this.removeClass('rotate-180');
-                        });
-                    }
+                }else{
+                    jQuery('#footer-bar').fadeOut('slow',function(){
+                        jQuery('#footer-bar').addClass('hidden');
+                        _this.removeClass('rotate-180');
+                    });
+                }
+                return false;
             });
 
             function show_hiw_item(ind,color){
@@ -93,15 +95,12 @@ export default function Footer({address,email,hotline}) {
                 jQuery('#slogan').addClass('text-yellow');
               }
               }
-              
-              jQuery('.hiw_menu_item').click(function(){
+              jQuery('body,html').on('click','.hiw_menu_item',function(e){
+                e.preventDefault();
                 show_hiw_item(jQuery(this).data('index'),jQuery(this).data('color'));
+                return false;
               });
-              jQuery('.h-full-block').each(function(){
-                if(jQuery(this).find('> div').height() > window.innerHeight){
-                    jQuery(this).removeClass('h-full');
-                }
-              });
+              
            
         }}
       />
