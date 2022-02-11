@@ -17,14 +17,16 @@ function HomePage({ data }) {
     <section id="main-content" className="2xl:h-full min-h-full bg-green text-white sm:p-10 p-5 ">
         <div className="border-4 border-black min-h-full">
         <Header slogan={data.page.slogan} sloganColor="yellow"/>
-            <article className="featured-image mt-6">
+           
+            <motion.figure initial={{ scale: 0.8, opacity: 0 }}
+  animate={{ scale: 1, opacity: 1 }} className="featured-image mt-6" layoutId="image">
             <Image src={data.page.thumbnail[0]} width={data.page.thumbnail[1]} height={data.page.thumbnail[2]} layout="responsive" />
-            </article>
+            </motion.figure>
             <div className="container w-fit lg:w-full lg:mx-auto mx-6 my-10">
                 <div className="md:grid md:grid-cols-5 md:gap-x-10 lg:gap-x-20">
                     <div className="col-span-2">
                         <div className="">
-                            <h2 className="xl:text-6xl text-3xl font-light ">{data.page.title}</h2>
+                            <motion.h1 className="xl:text-6xl text-3xl font-light">{data.page.title}</motion.h1>
                         </div>
                         
                     </div>
