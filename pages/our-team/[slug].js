@@ -2,8 +2,11 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import LayoutTeam from '../../components/layout-team'
 
-import GridSimple from '../../components/grid/simple'
 import GridTeamFriends from '../../components/grid/team-friends'
+import GridTeamDefault from '../../components/grid/team-default'
+import GridTeam1 from '../../components/grid/team-1'
+import GridTeam2 from '../../components/grid/team-2'
+import GridTeamHiring from '../../components/grid/team-hiring'
 
 function TeamPage({ data,options }) {
     const router = useRouter()
@@ -15,8 +18,17 @@ function TeamPage({ data,options }) {
     case "family-friends":
       comp = <GridTeamFriends data={data}/>;
       break;   
+      case "team-1":
+      comp = <GridTeam1 data={data}/>;
+      break; 
+      case "team-2":
+      comp = <GridTeam2 data={data}/>;
+      break; 
+      case "hiring":
+      comp = <GridTeamHiring data={data}/>;
+      break;       
     default:
-      comp = <GridSimple data={data}/>;
+      comp = <GridTeamDefault data={data}/>;
   }
 
   return (

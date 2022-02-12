@@ -16,3 +16,6 @@
 #__next{
   height: 100%;
 }
+.content_min_height{
+  min-height: calc(100vh - 230px);
+}

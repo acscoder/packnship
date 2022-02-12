@@ -1,7 +1,7 @@
 
 import { motion } from "framer-motion"
 import Image from 'next/image'
-export default function GridTeamFriends({ data }) {
+export default function GridTeamHiring({ data }) {
   const parse = require('html-react-parser');
   return (
     <>
