@@ -5,7 +5,7 @@ export default function Footer({address,email,hotline}) {
     const parse = require('html-react-parser');
     return ( 
     <>
-    <footer id="footer-bar" className="bg-orange text-white sm:p-10 p-5 hidden">
+    <footer id="footer-bar" className="bg-pink text-white sm:p-10 p-5 hidden">
     <div className="border-4 border-black relative h-[156px]">
         <div className="container mx-auto mt-[18px]">
             <div className="grow mr-[320px]">
@@ -68,10 +68,10 @@ export default function Footer({address,email,hotline}) {
             });
 
             function show_hiw_item(ind,color){
-                jQuery('body').attr('class', function(i, c){
+                jQuery('#main-content').attr('class', function(i, c){
               return c.replace(/(^|\s)bg-\S+/g, '');
               });
-                jQuery('body').addClass('bg-'+color+'-600');
+                jQuery('#main-content').addClass('bg-'+color+'-600');
               
               
                 jQuery('#hiw_menu button').attr('class', function(i, c){

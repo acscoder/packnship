@@ -7,7 +7,7 @@ module.exports = {
       colors:{
         'white':'#ffffff',
         'black':'#0d2b2a',
-        'green': {
+        'cascade': {
           DEFAULT: '#81A9A2',     
           '500': '#81A9A2',
           '600': '#81A9A2',
@@ -16,7 +16,7 @@ module.exports = {
           '900': '#1E2C29'
         },
        
-        'orange': {
+        'pink': {
           DEFAULT: '#ddc4bf',
           '500': '#ddc4bf',
           '600': '#ddc4bf',
@@ -30,14 +30,20 @@ module.exports = {
           '700': '#aa9779',
           '800': '#8e6761'
         },
-        'teal': {
+        'coriander': {
           DEFAULT: '#bfd0b6',
           '500': '#bfd0b6',
           '600': '#bfd0b6',
           '700': '#9bb28e',
           '800': '#56897d'
         },
-        
+        'aqua': {
+          DEFAULT: '#abdbd0',
+          '500': '#abdbd0',
+          '600': '#abdbd0',
+          '700': '#62b19f',
+          '800': '#448879'
+        },
       },
       fontFamily: {
         sans: ['roboto', 'sans-serif'],

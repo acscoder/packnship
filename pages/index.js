@@ -3,8 +3,7 @@ import Image from 'next/image'
 import { motion } from "framer-motion";
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import Header from '../components/header'
-import Footer from '../components/footer'
+import LayoutSimple from '../components/layout-simple'
 import Button from '../components/button'
 
 
@@ -14,12 +13,9 @@ function HomePage({ data }) {
   const parse = require('html-react-parser');
   return (
     <>
-    <section id="main-content" className="2xl:h-full min-h-full bg-green text-white sm:p-10 p-5 ">
-        <div className="border-4 border-black min-h-full">
-        <Header slogan={data.page.slogan} sloganColor="yellow"/>
-           
-            <motion.figure initial={{ scale: 0.8, opacity: 0 }}
-  animate={{ scale: 1, opacity: 1 }} className="featured-image mt-6" layoutId="image">
+           <LayoutSimple data={data}>
+            <motion.figure initial={{  opacity: 0 }}
+  animate={{ opacity: 1 }} className="featured-image mt-6" layoutId="image">
             <Image src={data.page.thumbnail[0]} width={data.page.thumbnail[1]} height={data.page.thumbnail[2]} layout="responsive" />
             </motion.figure>
             <div className="container w-fit lg:w-full lg:mx-auto mx-6 my-10">
@@ -30,22 +26,15 @@ function HomePage({ data }) {
                         </div>
                         
                     </div>
-                    <div className="col-span-3 text-black">
+                    <motion.div initial={{ y: 100, opacity: 0 }} animate={{ y: 0, opacity: 1 }} className="col-span-3 text-black">
                     {parse(data.page.content)}
                     
                     <Button text="Wie Es Funktioniert" color="yellow" href="/how-it-works/"></Button>
                         
-                    </div>
+                    </motion.div>
                 </div>
             </div>
-           
-           
-        </div>
-        
-    </section>
-    
-    <Footer address={data.options.address} email={data.options.email} hotline={data.options.hotline}/>
-
+           </LayoutSimple>
     </>
   )
 }

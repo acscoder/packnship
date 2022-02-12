@@ -17,7 +17,7 @@ export default function Header({slogan,sloganColor}) {
                                 <h2 className={"text-3xl font-normal text-"+ sloganColor }>{slogan}</h2>  
                             </div>
                         </div>
-                        <div className="py-10 lg:inline-flex lg:items-center">
+                        <div className="py-10 lg:inline-flex lg:items-center justify-end">
                             <div className="float-right inline-flex items-center">
                                 <div className="text-black font-bold uppercase text-lg lg:text-2xl">
                                 <Link href="/" locale="de"><a>DE</a></Link>/<Link href="/" locale="en"><a>EN</a></Link></div>

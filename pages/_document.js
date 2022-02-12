@@ -6,10 +6,10 @@ export default class MyDocument extends Document {
       <Html>
         <Head>
       
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet"/>
+          <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet"/>
          
         </Head>
-        <body className="h-full font-light text-base lg:text-xl bg-green transition">
+        <body className="h-full font-light text-base lg:text-xl bg-cascade transition">
           <Main />
           <NextScript />
         </body>

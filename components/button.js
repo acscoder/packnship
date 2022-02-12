@@ -4,7 +4,7 @@ export default function Button({href,color,text}) {
     return ( 
     <>
     <Link href={href}>
-        <a className={cl}><span>{text}</span> <img className="ml-5" src="./images/arrow-icon.svg" width="26" height="12"/></a>             
+        <a className={cl}><span>{text}</span> <img className="ml-5" src="/images/arrow-icon.svg" width="26" height="12"/></a>             
     </Link>
     </>
     )
