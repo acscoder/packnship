@@ -5,29 +5,28 @@ import LayoutTeam from '../../components/layout-team'
 import GridSimple from '../../components/grid/simple'
 import GridTeamFriends from '../../components/grid/team-friends'
 
-function TeamPage({ data }) {
+function TeamPage({ data,options }) {
     const router = useRouter()
   const { locale, locales, defaultLocale } = router
   
   let comp;
   
-  switch(data.page.data_layout) {
+  switch(data.data_layout) {
     case "family-friends":
-      comp = <GridTeamFriends data={data.page}/>;
+      comp = <GridTeamFriends data={data}/>;
       break;   
     default:
-      comp = <GridSimple data={data.page.data_grid}/>;
+      comp = <GridSimple data={data}/>;
   }
 
   return (
     <>
-  <LayoutTeam data={data}>{comp}</LayoutTeam>      
+  <LayoutTeam data={data} options={options}>{comp}</LayoutTeam>      
     </>
   )
 }
 export async function getStaticPaths() {
-
-  const posts = ["our-team/senior-management", "our-team/operational-team","our-team/now-hiring", "our-team/family-friends"];
+  const posts = ["senior-management", "operational-team","now-hiring", "family-friends"];
   const paths = posts.map((post) => ({
     params: { slug: post },
   }));
@@ -38,14 +37,13 @@ export async function getStaticPaths() {
   }
 }
 export async function getStaticProps(context) {
-  
-    //context.locale
-    //resolvedUrl
-    
-    const res_data = await fetch(process.env.NEXT_PUBLIC_WORDPRESS_SITE_URL+"/"+context.params.slug+"/?lang="+context.locale)
+    const res_options = await fetch(process.env.NEXT_PUBLIC_WORDPRESS_DATA_URL+"/"+context.locale+"/options.json")
+    const options = await res_options.json()
+
+    const res_data = await fetch(process.env.NEXT_PUBLIC_WORDPRESS_DATA_URL+"/"+context.locale+"/"+context.params.slug+".json")
     const data = await res_data.json()
 
-    return { props: { data },revalidate: 5  }
+    return { props: { data,options },revalidate: 5  }
   }
 
 export default TeamPage
