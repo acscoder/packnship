@@ -56,9 +56,9 @@ class HIWPage extends React.Component {
 {this.props.data.data_grid.steps &&this.props.data.data_grid.steps.map(function(step,index){
   
         return (<div className="sm:w-[500px]"  key={"step_b_"+index}>
-          <button data-color={step.class} data-index={index} onClick={_this.onClickHandler} className={"hiw_menu_item group h-20 w-full inline-flex items-center border-b-[3px] border-black text-left transition-colors hover:bg-"+_this.state.theme_color+"-700"}
+          <button data-color={step.class} data-index={index} onClick={_this.onClickHandler} className={"hiw_menu_item group h-20 w-full inline-flex items-center border-b-[3px] border-black text-left transition-colors "+(_this.state.current_step==index ? 'bg-'+_this.state.theme_color : 'hover:bg-'+_this.state.theme_color)+"-700"}
                     >
-                      <strong className={"ml-6 mr-8 group-hover:text-white number text-"+_this.state.theme_color+"-800"} >
+                      <strong className={"ml-6 mr-8 number "+ (_this.state.current_step==index ? 'text-white' : 'group-hover:text-white text-'+_this.state.theme_color+"-800")} >
                         0{index+1}
                       </strong>
                       <span className="sm:w-56 leading-none">
@@ -71,8 +71,6 @@ class HIWPage extends React.Component {
                  
                 </div>
               </div>
-
-             
 
               <div className="col-span-1 sm:block hidden">
                 <HiwItem current_step={this.state.current_step} data={this.props.data.data_grid.steps}/>          
