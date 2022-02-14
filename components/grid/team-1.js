@@ -14,10 +14,10 @@ export default function GridTeam1({ data }) {
           {data.title && <motion.h1 className="xl:text-4xl text-3xl mb-3 font-light">{data.title}</motion.h1>}
           {data.content && <div className="text-black">{parse(data.content)}</div>}
         {data.data_grid.members.map(function(member,index){
-          return (<>
+          return (
           <div className="border-[3px] p-7 border-black my-5 text-base" key={"member_1_"+index.toString()}>
           <div className="inline-flex w-full items-center">
-          <figure initial={{  opacity: 0 }} animate={{ opacity: 1 }} className="w-52 min-w-[220px] grow-0 mr-10" layoutId="image">
+          <figure initial={{  opacity: 0 }} animate={{ opacity: 1 }} className="w-52 min-w-[220px] grow-0 mr-10" >
           <Image src={member.thumbnail.url} width={member.thumbnail.width} height={member.thumbnail.height} layout="responsive" />
           </figure>
             <div className="grow">
@@ -31,7 +31,7 @@ export default function GridTeam1({ data }) {
             </div>
           </div>
           </div>
-          </>)
+          )
         })}          
   </>
   )
