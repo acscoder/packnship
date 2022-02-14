@@ -39,71 +39,24 @@ export default function Footer({address,email,hotline}) {
     </div>
     </footer>
     <div className="text-center w-full fixed sm:bottom-1 bottom-0 left-0 " id="show-footer">
-        <button className="transition" id="as_show_footer">
+        <button
+         onClick={(e) => {
+             
+             var _this = document.getElementById("as_show_footer");
+             
+             if(_this.classList.contains('rotate-180')){
+                _this.classList.remove('rotate-180');
+                document.getElementById("footer-bar").classList.add("hidden");
+             }else{
+                _this.classList.add('rotate-180');
+            document.getElementById("footer-bar").classList.remove("hidden");
+            document.getElementById("footer-bar").scrollIntoView({behavior: "smooth"});
+            }  
+        }}
+        className="transition" id="as_show_footer">
           <span className="icon-chevron-down mx-auto text-3xl"></span>
         </button>
     </div>
-
-    <Script
-        id="jquery"
-        strategy="lazyOnload"
-        src="https://code.jquery.com/jquery-1.12.4.min.js" 
-        onLoad={() => {
-        
-            jQuery('body,html').on('click','#as_show_footer',function(e){
-                e.preventDefault();
-                var _this = jQuery(this);
-                if(jQuery('#footer-bar').hasClass('hidden')){
-                    jQuery('#footer-bar').removeClass('hidden');
-                    jQuery('#footer-bar').show();
-                    _this.addClass('rotate-180');
-                    document.getElementById("footer-bar").scrollIntoView({behavior: "smooth"});
-                }else{
-                    jQuery('#footer-bar').fadeOut('slow',function(){
-                        jQuery('#footer-bar').addClass('hidden');
-                        _this.removeClass('rotate-180');
-                    });
-                }
-                return false;
-            });
-
-            function show_hiw_item(ind,color){
-                jQuery('#main-content').attr('class', function(i, c){
-              return c.replace(/(^|\s)bg-\S+/g, '');
-              });
-                jQuery('#main-content').addClass('bg-'+color+'-600');
-              
-              
-                jQuery('#hiw_menu button').attr('class', function(i, c){
-              return c.replace(/(^|\s)hover:bg-\S+/g, '');});
-              
-              jQuery('#hiw_menu button').addClass('hover:bg-'+color+'-700');
-              
-              
-              jQuery('#hiw_menu button .number').attr('class', function(i, c){
-              return c.replace(/(^|\s)text-(\S+)-800/g, '');});
-              jQuery('#hiw_menu button .number').addClass('text-'+color+'-800');
-              
-              
-              jQuery('.hiw_item').addClass('sm:hidden');
-              jQuery('#hiw_item_'+ind).removeClass('sm:hidden');
-              
-              jQuery('#slogan').removeClass('text-yellow');
-              if(ind){
-                jQuery('#slogan').addClass('text-white');
-              }else{
-                jQuery('#slogan').addClass('text-yellow');
-              }
-              }
-              jQuery('body,html').on('click','.hiw_menu_item',function(e){
-                e.preventDefault();
-                show_hiw_item(jQuery(this).data('index'),jQuery(this).data('color'));
-                return false;
-              });
-              
-           
-        }}
-      />
 
     </>
     )
