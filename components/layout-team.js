@@ -2,7 +2,7 @@ import Footer from '../components/footer'
 import Header from '../components/header'
 import Link from 'next/link'
 export default function LayoutTeam({ children,data,options }) {
-  console.log(data.background_color)
+  
   return (
     <>
       <section className={"xl:h-screen text-white sm:p-10 p-5 bg-"+data.background_color}>
