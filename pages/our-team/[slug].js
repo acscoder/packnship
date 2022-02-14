@@ -49,12 +49,14 @@ export async function getStaticPaths() {
   }
 }
 export async function getStaticProps(context) {
+  
     const res_options = await fetch(process.env.NEXT_PUBLIC_WORDPRESS_DATA_URL+"/"+context.locale+"/options.json")
     const options = await res_options.json()
 
     const res_data = await fetch(process.env.NEXT_PUBLIC_WORDPRESS_DATA_URL+"/"+context.locale+"/"+context.params.slug+".json")
     const data = await res_data.json()
-
+    
+    options.currentSlug = context.params.slug 
     return { props: { data,options },revalidate: 5  }
   }
 

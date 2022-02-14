@@ -34,7 +34,7 @@ export async function getStaticProps(context) {
 
     const res_data = await fetch(process.env.NEXT_PUBLIC_WORDPRESS_DATA_URL+"/"+context.locale+"/our-team.json")
     const data = await res_data.json()
-
+    options.currentSlug = "our-team"
     return { props: { data,options },revalidate: 5  }
   }
 

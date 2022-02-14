@@ -1,7 +1,7 @@
 import Link from 'next/link'
 
-export default function Header({slogan,sloganColor}) {
-    
+export default function Header({slogan,sloganColor,currentSlug}) {
+    if(!currentSlug){currentSlug = '/';}
     return ( 
     <>
 <header className="header border-b-[3px] border-black">
@@ -20,8 +20,8 @@ export default function Header({slogan,sloganColor}) {
                         <div className="py-10 lg:inline-flex lg:items-center justify-end">
                             <div className="float-right inline-flex items-center">
                                 <div className="text-black font-bold uppercase text-lg lg:text-2xl">
-                                <Link href="/" locale="de"><a>DE</a></Link>/<Link href="/" locale="en"><a>EN</a></Link></div>
-                                <Link href="/wie-es-funktioniert"><a className="xl:ml-10 ml-5 block xl:w-24 w-12"><img src="/images/faltplan-weiss.svg" /></a></Link>
+                                <Link href={currentSlug} locale="de"><a>DE</a></Link>/<Link href={currentSlug} locale="en"><a>EN</a></Link></div>
+                                <Link href="/how-it-works"><a className="xl:ml-10 ml-5 block xl:w-24 w-12"><img src="/images/faltplan-weiss.svg" /></a></Link>
                             </div>
                         </div>
                     </div>
