@@ -13,13 +13,13 @@ export default function GridTeam1({ data }) {
           }
           {data.title && <motion.h1 className="xl:text-4xl text-3xl mb-3 font-light">{data.title}</motion.h1>}
           {data.content && <div className="text-black">{parse(data.content)}</div>}
-        {data.data_grid.members.map(function(member){
+        {data.data_grid.members.map(function(member,index){
           return (<>
-          <div className="border-[3px] p-7 border-black my-5 text-base">
+          <div className="border-[3px] p-7 border-black my-5 text-base" key={"member_1_"+index.toString()}>
           <div className="inline-flex w-full items-center">
-          <motion.figure initial={{  opacity: 0 }} animate={{ opacity: 1 }} className="w-52 min-w-[220px] grow-0 mr-10" layoutId="image">
+          <figure initial={{  opacity: 0 }} animate={{ opacity: 1 }} className="w-52 min-w-[220px] grow-0 mr-10" layoutId="image">
           <Image src={member.thumbnail.url} width={member.thumbnail.width} height={member.thumbnail.height} layout="responsive" />
-          </motion.figure>
+          </figure>
             <div className="grow">
               <h4 className="font-medium text-2xl">{member.name}</h4>
               <p className="font-medium mb-2">{member.role}</p>

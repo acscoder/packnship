@@ -15,9 +15,9 @@ export default function GridTeam2({ data }) {
           {data.title && <motion.h1 className="xl:text-4xl text-3xl mb-3 font-light">{data.title}</motion.h1>}
           {data.content && <div className="text-black">{parse(data.content)}</div>}
           <div className="grid md:grid-cols-3 gap-5 mx-auto xl:max-w-[90%]">
-          {data.data_grid.members &&data.data_grid.members.map(function(member){
+          {data.data_grid.members &&data.data_grid.members.map(function(member,index){
           return (<>
-          <div className="border-[3px] p-7 border-black text-base text-center">
+          <div className="border-[3px] p-7 border-black text-base text-center" key={"member_2_"+index}>
           
             <figure className="w-28 mx-auto mb-3" layoutId="image">
             <Image src={member.thumbnail.url} width={member.thumbnail.width} height={member.thumbnail.height} layout="responsive" />

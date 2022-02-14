@@ -2,9 +2,10 @@ import Footer from '../components/footer'
 import Header from '../components/header'
 import Link from 'next/link'
 export default function LayoutTeam({ children,data,options }) {
+  console.log(data.background_color)
   return (
     <>
-      <section id="main-content" className={"xl:h-screen text-white sm:p-10 p-5 bg-"+data.background_color}>
+      <section className={"xl:h-screen text-white sm:p-10 p-5 bg-"+data.background_color}>
         <div className="border-4 border-black xl:min-h-full relative">         
             <Header slogan={data.slogan} sloganColor={data.slogan_color}/>
             <div className="container w-full lg:mx-auto mx-6 content_min_height flex items-center ">

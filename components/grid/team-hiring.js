@@ -16,9 +16,9 @@ export default function GridTeamHiring({ data }) {
           {data.title && <motion.h1 className="xl:text-4xl text-3xl mb-3 font-light">{data.title}</motion.h1>}
           {data.content && <div className="text-black">{parse(data.content)}</div>}
           <div className="grid md:grid-cols-3 gap-5">
-          {data.data_grid.jobs &&data.data_grid.jobs.map(function(job){
+          {data.data_grid.jobs &&data.data_grid.jobs.map(function(job,index){
           return (<>
-          <div className="border-[3px] p-5 border-black text-base">
+          <div className="border-[3px] p-5 border-black text-base" key={"job_"+index}>
               
             <div></div>
               <div>      
