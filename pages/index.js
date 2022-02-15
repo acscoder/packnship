@@ -1,9 +1,7 @@
 import Image from 'next/image'
 import { motion } from "framer-motion";
-import Link from 'next/link'
-import LayoutSimple from '../components/layout-simple'
-import Button from '../components/button'
 
+import LayoutSimple from '../components/layout-simple'
 
 function HomePage({ data,options }) {
    
@@ -25,8 +23,6 @@ function HomePage({ data,options }) {
                     </div>
                     <motion.div initial={{ y: 100, opacity: 0 }} animate={{ y: 0, opacity: 1 }} className="col-span-3 text-black">
                     {parse(data.content)}
-                    
-                    <Button text="Wie Es Funktioniert" color="yellow" href="/how-it-works/"></Button>
                         
                     </motion.div>
                 </div>
@@ -40,10 +36,12 @@ export async function getStaticProps(context) {
   
     //context.locale
     //resolvedUrl
-    const res_options = await fetch(process.env.NEXT_PUBLIC_WORDPRESS_DATA_URL+"/"+context.locale+"/options.json")
+    let ver = Math.random();
+
+    const res_options = await fetch(process.env.NEXT_PUBLIC_WORDPRESS_DATA_URL+"/"+context.locale+"/options.json?v="+ver)
     const options = await res_options.json()
 
-    const res_data = await fetch(process.env.NEXT_PUBLIC_WORDPRESS_DATA_URL+"/"+context.locale+"/home-page.json")
+    const res_data = await fetch(process.env.NEXT_PUBLIC_WORDPRESS_DATA_URL+"/"+context.locale+"/home-page.json?v="+ver)
     const data = await res_data.json()
 
     return { props: { data,options },revalidate: 5  }

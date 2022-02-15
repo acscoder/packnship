@@ -115,12 +115,12 @@ class HIWPage extends React.Component {
 export async function getStaticProps(context) {
   //context.locale
   //resolvedUrl
-
+  const ver = Math.floor(Math.random() * 10000) + 1
   const res_options = await fetch(
     process.env.NEXT_PUBLIC_WORDPRESS_DATA_URL +
       "/" +
       context.locale +
-      "/options.json"
+      "/options.json?ver="+ver
   );
   const options = await res_options.json();
 
@@ -128,7 +128,7 @@ export async function getStaticProps(context) {
     process.env.NEXT_PUBLIC_WORDPRESS_DATA_URL +
       "/" +
       context.locale +
-      "/how-it-works.json"
+      "/how-it-works.json?ver="+ver
   );
   const data = await res_data.json();
 

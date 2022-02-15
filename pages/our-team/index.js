@@ -28,11 +28,11 @@ function TeamPage({ data,options }) {
 }
 
 export async function getStaticProps(context) {
-
-    const res_options = await fetch(process.env.NEXT_PUBLIC_WORDPRESS_DATA_URL+"/"+context.locale+"/options.json")
+  const ver = Math.floor(Math.random() * 10000) + 1
+    const res_options = await fetch(process.env.NEXT_PUBLIC_WORDPRESS_DATA_URL+"/"+context.locale+"/options.json?ver="+ver)
     const options = await res_options.json()
 
-    const res_data = await fetch(process.env.NEXT_PUBLIC_WORDPRESS_DATA_URL+"/"+context.locale+"/our-team.json")
+    const res_data = await fetch(process.env.NEXT_PUBLIC_WORDPRESS_DATA_URL+"/"+context.locale+"/our-team.json?ver="+ver)
     const data = await res_data.json()
     options.currentSlug = "our-team"
     return { props: { data,options },revalidate: 5  }
