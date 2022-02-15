@@ -27,10 +27,9 @@ export default function GridTeamFriends({ data }) {
               <Image src={item.image.url} width={item.image.width/2} height={item.image.height/2} layout="fixed" />
               </figure>
               <div className="text-left bg-aqua-700 absolute p-5  top-0 left-0 opacity-0 hover:opacity-100 transition-opacity duration-700 h-full">
-                <h4 className="font-medium text-lg">{item.title}</h4>
+                <h4 className="font-medium text-lg mb-1">{item.title}</h4>
                
                 <p className="mb-5 font-base leading-4">{item.description}</p>
-  
                 
                 </div>    
             </div>

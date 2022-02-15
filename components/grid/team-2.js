@@ -53,7 +53,7 @@ export default function GridTeam2({ data }) {
           <div className="member_group w-full" key={"member_2_"+ind}>
             <div className="grid md:grid-cols-3 gap-5">
             {member_group.length && member_group.map(function(member,index){
-              return (<div className="border-[3px] p-7 border-black text-base text-center" key={"member_2_2_"+index}>
+              return (<div className="border-[3px] p-7 border-black text-base text-center relative" key={"member_2_2_"+index}>
           
               <figure className="w-28 mx-auto mb-3">
               <Image src={member.thumbnail.url} width={member.thumbnail.width} height={member.thumbnail.height} layout="responsive" />
@@ -62,11 +62,19 @@ export default function GridTeam2({ data }) {
                 <p className="font-medium mb-1">{member.role}</p>
                 <p className="mb-5">{member.description}</p>
   <div><span className="icon-mail mx-2"></span><span className="icon-mobile mx-2"></span></div>
-                <div className="font-medium hidden">
-                  <div className="mr-10 mt-2"><span className="icon-mail mr-2"></span>{member.email}</div>
-                  <div className="mt-2"><span className="icon-mobile mr-2"></span>{member.phone_number}</div>
-                </div>
-              
+               
+               
+                <div className="inline-flex items-center bg-pink-700 absolute p-5  top-0 left-0 opacity-0 hover:opacity-100 transition-opacity duration-700 h-full w-full">
+                <div className="w-full">  
+                <h4 className="font-medium text-xl">{member.name}</h4>
+                <p className="font-medium mb-1">{member.role}</p>
+                <p className="mb-8">{member.description}</p>
+                  <div className="font-medium">
+                    <div className="mt-2"><span className="icon-mail mr-2"></span>{member.email}</div>
+                    <div className="mt-2"><span className="icon-mobile mr-2"></span>{member.phone_number}</div>
+                  </div>   
+                </div>   
+                </div>  
             </div>)
             })
               
