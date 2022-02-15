@@ -3,6 +3,7 @@ import { motion } from "framer-motion"
 import Image from 'next/image'
 import Head from 'next/head'
 import Slider from "react-slick"
+import getStranslatedString from '../../lib/string'
 
 export default function GridTeamHiring({ data }) {
   const parse = require('html-react-parser');
@@ -47,12 +48,12 @@ export default function GridTeamHiring({ data }) {
           {data.title && <motion.h1 className="xl:text-4xl text-3xl mb-3 font-light">{data.title}</motion.h1>}
           {data.content && <div className="text-black">{parse(data.content)}</div>}
           
-
+          <h3 className="xl:text-3xl text-2xl mt-10">{getStranslatedString("Wir stellen ein")}</h3>
+          <Slider {...slider_settings}>
           {jobs.length &&jobs.map(function(job_group,ind){ 
-          return (
-            
+          return ( 
             <div className="job-group" key={"job_group_"+ind}> 
-            <div className="grid md:grid-cols-3 gap-5 mt-10">
+            <div className="grid md:grid-cols-3 gap-5 mt-5">
               {job_group.length && job_group.map(function(job,index){
                 return (
               <div className="border-[3px] p-5 border-black text-base hover:bg-coriander-700 transition-colors" key={"job_"+index}>  
@@ -60,14 +61,14 @@ export default function GridTeamHiring({ data }) {
                   <h4 className="font-medium text-lg">{job.title}</h4>
                   <p className="mb-2">{job.sub_title}</p>
                   <p className="text-black">{job.description}</p>
-                  <a href={job.apply_url} target="_blank" className="font-semibold">Apply Now</a>
+                  {job.apply_url?<a href={job.apply_url} target="_blank" className="font-semibold">{getStranslatedString("Jetzt bewerben")}</a>:<p className="text-black">{getStranslatedString("Kommt bald")}</p>}                  
                   </div>
               </div>   
             )})} 
             </div>   
           </div>        
-          )})} 
-           
+          )})}
+          </Slider>
   </>
   )
 }

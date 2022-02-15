@@ -132,7 +132,7 @@ export async function getStaticProps(context) {
   );
   const data = await res_data.json();
 
-  options.currentSlug = "how-it-works"
+  options.currentSlug = "/how-it-works"
 
   return { props: { data, options }, revalidate: 5 };
 }

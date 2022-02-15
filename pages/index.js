@@ -1,14 +1,12 @@
 import Image from 'next/image'
 import { motion } from "framer-motion";
 import Link from 'next/link'
-import { useRouter } from 'next/router'
 import LayoutSimple from '../components/layout-simple'
 import Button from '../components/button'
 
 
 function HomePage({ data,options }) {
-    const router = useRouter()
-  const { locale, locales, defaultLocale } = router
+   
   const parse = require('html-react-parser');
   return (
     <>

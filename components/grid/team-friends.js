@@ -14,7 +14,31 @@ export default function GridTeamFriends({ data }) {
           }
           {data.title && <motion.h1 className="xl:text-4xl text-3xl mb-3 font-light">{data.title}</motion.h1>}
           {data.content && <div className="text-black">{parse(data.content)}</div>}
-                  
+
+          <div className="item_group w-full mt-8">
+            <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-5">
+           
+          {data.data_grid.items && data.data_grid.items.map(function(item,index){
+          return (
+          
+          <div className="border-[3px] p-7 border-black text-base text-center relative" key={"friend_"+index}>
+          
+              <figure className="mx-auto h-full inline-flex items-center">
+              <Image src={item.image.url} width={item.image.width/2} height={item.image.height/2} layout="fixed" />
+              </figure>
+              <div className="text-left bg-aqua-700 absolute p-5  top-0 left-0 opacity-0 hover:opacity-100 transition-opacity duration-700 h-full">
+                <h4 className="font-medium text-lg">{item.title}</h4>
+               
+                <p className="mb-5 font-base leading-4">{item.description}</p>
+  
+                
+                </div>    
+            </div>
+          
+          )
+        })}   
+         </div>
+            </div>   
   </>
   )
 }
