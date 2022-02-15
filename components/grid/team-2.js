@@ -58,7 +58,6 @@ export default function GridTeam2({ data }) {
               <figure className="w-28 mx-auto mb-3">
               <Image src={member.thumbnail.url} width={member.thumbnail.width} height={member.thumbnail.height} layout="responsive" />
               </figure>
-              
                 <h4 className="font-medium text-xl">{member.name}</h4>
                 <p className="font-medium mb-1">{member.role}</p>
                 <p className="mb-5">{member.description}</p>

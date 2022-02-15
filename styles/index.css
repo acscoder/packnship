@@ -19,3 +19,29 @@
 .content_min_height{
   min-height: calc(100vh - 230px);
 }
+.layout_team .slick-dots{
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+  margin-top: 20px;
+  display: inline-flex!important;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.layout_team .slick-dots > li {
+  margin:0 5px;
+}
+.layout_team .slick-dots > li > button{
+  width: 10px;
+  height: 10px;
+  background-color: #7eaba1;
+  border-radius: 50%;
+  font-size: 0;
+  text-indent: -9999px;
+  padding: 0;
+  border: none;
+}
+.layout_team .slick-dots > li.slick-active > button{
+  background-color: #ffffff;
+}
