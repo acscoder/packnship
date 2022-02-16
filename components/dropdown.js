@@ -3,7 +3,7 @@ export default function Dropdown({ href, color, text }) {
   return (
     <div className="dropdown relative">
     
-          <button class="group h-20 w-full inline-flex items-center text-left transition-colors bg-coriander-700">
+          <button class="group h-14 w-full inline-flex items-center text-left transition-colors bg-coriander-700">
               <strong class="ml-6 mr-8 group-hover:text-white number font-black text-white">04</strong>
               <span class=" leading-none font-bold">Now Hiring</span>
           <span className="icon-chevron-down"></span>
