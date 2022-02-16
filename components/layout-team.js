@@ -14,7 +14,8 @@ export default function LayoutTeam({ children,data,options }) {
                 <div className="my-5 lg:grid lg:grid-cols-3 md:grid-cols-2 lg:gap-x-10 xl:gap-x-20 mx-auto xl:max-w-[95%] w-full">
                 
                     <div className="col-span-2">
-                    <Dropdown></Dropdown>
+                      <div className="lg:hidden block"><Dropdown></Dropdown></div>
+                    
                     {children}
                     </div>
                     <div className="col-span-1 lg:block hidden">

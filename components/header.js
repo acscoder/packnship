@@ -10,7 +10,7 @@ export default function Header({slogan,sloganColor,currentSlug}) {
                     <div className="grid xl:grid-cols-5 xl:gap-x-10 grid-cols-2 gap-x-2">
                         <div className="logo py-10 inline-flex items-center ">
                         <Link href="/">
-                            <a className="text-6xl"><span className="icon-logo"></span></a>
+                            <a className="lg:text-6xl text-3xl"><span className="icon-logo"></span></a>
                         </Link>
                         </div>
                         <div className="col-span-3 xl:block hidden">
