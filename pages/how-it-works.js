@@ -7,8 +7,6 @@ import Header from "../components/header";
 import HiwItem from "../components/hiw-item";
 import React from "react";
 
-import { CustomView, MobileView, isMobile } from 'react-device-detect';
-
 class HIWPage extends React.Component {
   constructor() {
     super();
@@ -49,7 +47,7 @@ class HIWPage extends React.Component {
                   {this.props.data.title}
                 </h2>
                 <div className="text-black">{parse(this.props.data.content)}</div>
-                <CustomView condition={!isMobile}>
+      
                 <div
                   className="sm:text-2xl text-xl font-regular mt-6 md:block hidden"
                   id="hiw_menu"
@@ -70,20 +68,19 @@ class HIWPage extends React.Component {
         </div>)
       })}
                 </div>
-                </CustomView>
               </div>
-<CustomView condition={!isMobile}>
+
+
               <div className="col-span-1 md:block hidden">
                 <HiwItem current_step={this.state.current_step} data={this.props.data.data_grid.steps}/>          
               </div>
-              </CustomView>
 
             </div>
           </div>
         </div>
       </section>
-
-      <CustomView condition={isMobile}>
+    
+    
       {this.props.data.data_grid.steps &&this.props.data.data_grid.steps.map(function(step,index){
         return (<div key={"step_m_"+index}>
          <div className={"hiw_item_mobile md:p-10 p-5 md:hidden block h-full h-full-block bg-"+step.class+"-600"} >
@@ -106,7 +103,7 @@ class HIWPage extends React.Component {
       </div>
         </div>)
       })}
-    </CustomView>
+    
       <Footer
         address={this.props.options.address}
         email={this.props.options.email}
