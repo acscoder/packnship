@@ -7,6 +7,8 @@ import Header from "../components/header";
 import HiwItem from "../components/hiw-item";
 import React from "react";
 
+import { CustomView, MobileView, isMobile } from 'react-device-detect';
+
 class HIWPage extends React.Component {
   constructor() {
     super();
@@ -33,7 +35,7 @@ class HIWPage extends React.Component {
       <section
         id="main-content"
         className={
-          "xl:h-full min-h-full text-white sm:p-10 p-5 bg-" +
+          "xl:h-full min-h-full text-white xl:p-10 p-5 bg-" +
           this.state.theme_color+"-600"
         }
       >
@@ -47,15 +49,15 @@ class HIWPage extends React.Component {
                   {this.props.data.title}
                 </h2>
                 <div className="text-black">{parse(this.props.data.content)}</div>
-                
+                <CustomView condition={!isMobile}>
                 <div
-                  className="sm:text-2xl text-xl font-regular mt-6 sm:block hidden"
+                  className="sm:text-2xl text-xl font-regular mt-6 md:block hidden"
                   id="hiw_menu"
                 >
 
 {this.props.data.data_grid.steps &&this.props.data.data_grid.steps.map(function(step,index){
   
-        return (<div className="sm:w-[500px]"  key={"step_b_"+index}>
+        return (<div className="md:w-[500px]"  key={"step_b_"+index}>
           <button data-color={step.class} data-index={index} onClick={_this.onClickHandler} className={"hiw_menu_item group h-20 w-full inline-flex items-center border-b-[3px] border-black text-left transition-colors "+(_this.state.current_step==index ? 'bg-'+_this.state.theme_color : 'hover:bg-'+_this.state.theme_color)+"-700"}
                     >
                       <strong className={"ml-6 mr-8 number "+ (_this.state.current_step==index ? 'text-white' : 'group-hover:text-white text-'+_this.state.theme_color+"-800")} >
@@ -67,22 +69,24 @@ class HIWPage extends React.Component {
                     </button>
         </div>)
       })}
-
-                 
                 </div>
+                </CustomView>
               </div>
-
-              <div className="col-span-1 sm:block hidden">
+<CustomView condition={!isMobile}>
+              <div className="col-span-1 md:block hidden">
                 <HiwItem current_step={this.state.current_step} data={this.props.data.data_grid.steps}/>          
               </div>
+              </CustomView>
+
             </div>
           </div>
         </div>
       </section>
 
+      <CustomView condition={isMobile}>
       {this.props.data.data_grid.steps &&this.props.data.data_grid.steps.map(function(step,index){
         return (<div key={"step_m_"+index}>
-         <div className={"hiw_item_mobile sm:p-10 p-5 sm:hidden block h-full h-full-block bg-"+step.class+"-600"} >
+         <div className={"hiw_item_mobile md:p-10 p-5 md:hidden block h-full h-full-block bg-"+step.class+"-600"} >
         <div className="border-4 border-black h-full">
           
           <figure className="my-5">
@@ -102,7 +106,7 @@ class HIWPage extends React.Component {
       </div>
         </div>)
       })}
-    
+    </CustomView>
       <Footer
         address={this.props.options.address}
         email={this.props.options.email}

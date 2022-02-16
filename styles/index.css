@@ -42,6 +42,13 @@
   padding: 0;
   border: none;
 }
+
 .layout_team .slick-dots > li.slick-active > button{
-  background-color: #ffffff;
+  background-color: #ffffff!important;
+}
+.layout_team.bg-yellow .slick-dots > li > button{
+  background-color: rgba(170, 151, 121, var(--tw-bg-opacity));
+}
+.layout_team.bg-pink .slick-dots > li > button{
+  background-color: rgba(186, 156, 147, var(--tw-bg-opacity));
 }
