@@ -35,8 +35,8 @@ function TeamPage({ data,options }) {
 
 }
 export async function getStaticPaths() {
-  
-  const res_data = await fetch(process.env.NEXT_PUBLIC_WORDPRESS_DATA_URL+"/de/our-team.json")
+  const ver = Math.random()
+  const res_data = await fetch(process.env.NEXT_PUBLIC_WORDPRESS_DATA_URL+"/de/our-team.json?ver="+ver)
    
   const data = await res_data.json()
 
