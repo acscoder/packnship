@@ -1,11 +1,10 @@
 
 import { motion } from "framer-motion"
 import Image from 'next/image'
-import Head from 'next/head'
-import Slider from "react-slick"
-import getStranslatedString from '../../lib/string'
 
-export default function GridTeamHiring({ data }) {
+import getStranslatedString from '../../../lib/string'
+
+export default function GridTeamHiringMobile({ data,index }) {
   const parse = require('html-react-parser');
   let jobs = [[]]
   let jobs_tem = 0
@@ -30,15 +29,17 @@ export default function GridTeamHiring({ data }) {
   };
  
   return (
-    <>   
-     <Head>
-     <link
-  rel="stylesheet"
-  type="text/css"
-  charset="UTF-8"
-  href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
-/>
-     </Head>  
+    <div className="my-5">   
+    <div className="text-3xl my-3 text-white">
+              <strong
+                className={
+                  "font-bold pr-2 text-" + data.background_color + "-800"
+                }
+              >
+                0{index}
+              </strong>
+              {data.page_title}
+            </div>
         {data.thumbnail[0] &&
             <motion.figure initial={{  opacity: 0 }}
             animate={{ opacity: 1 }} className="featured-image mb-6" layoutId="image">
@@ -48,11 +49,11 @@ export default function GridTeamHiring({ data }) {
           {data.title && <motion.h1 className="xl:text-4xl text-2xl mb-3 font-light">{data.title}</motion.h1>}
           {data.content && <div className="text-black">{parse(data.content)}</div>}
           
-          <h3 className="xl:text-3xl text-2xl mt-10">{getStranslatedString("Wir stellen ein")}</h3>
-          <Slider {...slider_settings}>
+          <h3 className="xl:text-3xl text-xl mt-10">{getStranslatedString("Wir stellen ein")}</h3>
+          
           {jobs.length &&jobs.map(function(job_group,ind){ 
           return ( 
-            <div className="job-group" key={"job_group_"+ind}> 
+            <div className={"job-group "+(ind?"hidden":"")} key={"job_group_"+ind}> 
             <div className="grid md:grid-cols-3 gap-5 mt-5">
               {job_group.length && job_group.map(function(job,index){
                 return (
@@ -68,7 +69,7 @@ export default function GridTeamHiring({ data }) {
             </div>   
           </div>        
           )})}
-          </Slider>
-  </>
+         
+  </div>
   )
 }

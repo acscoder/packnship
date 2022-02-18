@@ -6,7 +6,7 @@ import Footer from "../components/footer";
 import Header from "../components/header";
 import HiwItem from "../components/hiw-item";
 import React from "react";
-
+import { MobileView, isMobile } from "react-device-detect"
 class HIWPage extends React.Component {
   constructor() {
     super();
@@ -38,7 +38,7 @@ class HIWPage extends React.Component {
         }
       >
         <div className="border-4 border-black xl:min-h-full relative">
-          <Header slogan={this.props.data.slogan} sloganColor={this.props.data.slogan_color} currentSlug={this.props.options.currentSlug} />
+          <Header slogan={this.props.data.slogan} sloganColor={this.props.data.slogan_color} currentSlug={this.props.options.currentSlug} seo={this.props.data.seo}/>
 
           <div className="container w-fit lg:w-full lg:mx-auto mx-6 min-h-[300px]">
             <div className="lg:grid grid-cols-2 lg:my-16 my-8">
@@ -80,7 +80,7 @@ class HIWPage extends React.Component {
         </div>
       </section>
     
-    
+    <MobileView>
       {this.props.data.data_grid.steps &&this.props.data.data_grid.steps.map(function(step,index){
         return (<div key={"step_m_"+index}>
          <div className={"hiw_item_mobile md:p-10 p-5 md:hidden block h-full h-full-block bg-"+step.class+"-600"} >
@@ -103,7 +103,8 @@ class HIWPage extends React.Component {
       </div>
         </div>)
       })}
-    
+    </MobileView>
+
       <Footer
         address={this.props.options.address}
         email={this.props.options.email}

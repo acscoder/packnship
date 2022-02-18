@@ -32,10 +32,15 @@ function TeamPage({ data,options }) {
   }
 
   return <LayoutTeam data={data} options={options}>{comp}</LayoutTeam>  
+
 }
 export async function getStaticPaths() {
-  const posts = ["senior-management", "operational-team","now-hiring", "family-friends"];
-  const paths = posts.map((post) => ({
+  
+  const res_data = await fetch(process.env.NEXT_PUBLIC_WORDPRESS_DATA_URL+"/de/our-team.json")
+   
+  const data = await res_data.json()
+
+  const paths = Object.keys(data.sub_page).map((post) => ({
     params: { slug: post },
   }));
 
@@ -45,14 +50,12 @@ export async function getStaticPaths() {
   }
 }
 export async function getStaticProps(context) {
-  //const ver = Math.floor(Math.random() * 10000) + 1
-  const ver = 1
+    const ver = Math.random()
     const res_options = await fetch(process.env.NEXT_PUBLIC_WORDPRESS_DATA_URL+"/"+context.locale+"/options.json?ver="+ver)
     const options = await res_options.json()
-
     const res_data = await fetch(process.env.NEXT_PUBLIC_WORDPRESS_DATA_URL+"/"+context.locale+"/"+context.params.slug+".json?ver="+ver)
+   
     const data = await res_data.json()
-    
     options.currentSlug = "/our-team/"+context.params.slug 
     
     return { props: { data,options },revalidate: 5  }

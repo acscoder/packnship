@@ -1,10 +1,15 @@
 import Link from 'next/link'
+import { NextSeo } from 'next-seo'
 
-export default function Header({slogan,sloganColor,currentSlug}) {
+export default function Header({slogan,sloganColor,currentSlug,seo}) {
     if(!currentSlug){currentSlug = '/';}
 
     return ( 
     <>
+    <NextSeo
+      title={seo.title}
+      description={seo.description}
+    />
 <header className="header border-b-[3px] border-black">
                 <div className="container w-[auto] lg:w-full lg:mx-auto mx-6">
                     <div className="grid xl:grid-cols-5 xl:gap-x-10 grid-cols-2 gap-x-2">
