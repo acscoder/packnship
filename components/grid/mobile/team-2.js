@@ -19,7 +19,7 @@ export default function GridTeam2Mobile({ data,index }) {
  
   return (
     <div className="my-5">
-   <div className="text-3xl my-3 text-white">
+   <div className="text-[28px] my-5 text-white">
               <strong
                 className={
                   "font-bold pr-2 text-" + data.background_color + "-800"

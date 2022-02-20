@@ -1,15 +1,20 @@
 import Link from 'next/link'
-import { NextSeo } from 'next-seo'
+import Head from 'next/head'
 
 export default function Header({slogan,sloganColor,currentSlug,seo}) {
     if(!currentSlug){currentSlug = '/';}
-
+    const parse = require('html-react-parser');
     return ( 
-    <>
-    <NextSeo
-      title={seo.title}
-      description={seo.description}
-    />
+        <>
+        <Head>
+        <meta charset="UTF-8"/>
+	<link rel="profile" href="http://gmpg.org/xfn/11"/>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+        {parse(seo)}
+      </Head>
+    
 <header className="header border-b-[3px] border-black">
                 <div className="container w-[auto] lg:w-full lg:mx-auto mx-6">
                     <div className="grid xl:grid-cols-5 xl:gap-x-10 grid-cols-2 gap-x-2">

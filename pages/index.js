@@ -36,7 +36,7 @@ export async function getStaticProps(context) {
   
     //context.locale
     //resolvedUrl
-    const ver = 1
+    const ver = Math.random()
 
     const res_options = await fetch(process.env.NEXT_PUBLIC_WORDPRESS_DATA_URL+"/"+context.locale+"/options.json?v="+ver)
     const options = await res_options.json()
