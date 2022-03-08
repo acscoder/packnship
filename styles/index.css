@@ -13,7 +13,12 @@
 /* Stop purging. */
 
 /* Your own custom utilities */
-#__next{
+@media (min-width: 1900px){
+.container{
+  max-width: 90%;
+}
+}
+#__next,body,html{
   height: 100%;
 }
 .content_min_height{

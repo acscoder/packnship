@@ -17,7 +17,7 @@ export default function GridTeam1({ data }) {
           return (
           <div className="border-[3px] p-7 border-black my-5 text-base" key={"member_1_"+index.toString()}>
           <div className="md:inline-flex block w-full items-center">
-          <figure initial={{  opacity: 0 }} animate={{ opacity: 1 }} className="w-52 sm:min-w-[220px] min-w-[110px] grow-0 mr-10" >
+          <figure initial={{  opacity: 0 }} animate={{ opacity: 1 }} className="w-52 sm:min-w-[220px] min-w-[110px] grow-0 lg:mr-10" >
           <Image src={member.thumbnail.url} width={member.thumbnail.width} height={member.thumbnail.height} layout="responsive" />
           </figure>
             <div className="grow">

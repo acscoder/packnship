@@ -13,11 +13,11 @@ function HomePage({ data,options }) {
   animate={{ opacity: 1 }} className="featured-image mt-6" layoutId="image">
             <Image src={data.thumbnail[0]} width={data.thumbnail[1]} height={data.thumbnail[2]} layout="responsive" />
             </motion.figure>
-            <div className="container w-fit lg:w-full lg:mx-auto px-6 my-10">
+            <div className="container xl:mx-auto xl:px-0 px-6 my-10">
                 <div className="md:grid md:grid-cols-5 md:gap-x-10 lg:gap-x-20">
                     <div className="col-span-2">
                         <div className="">
-                            <motion.h1 className="xl:text-6xl text-3xl font-light">{data.title}</motion.h1>
+                            <motion.h1 className="2xl:text-6xl xl:text-5xl text-3xl font-light">{data.title}</motion.h1>
                         </div>
                         
                     </div>

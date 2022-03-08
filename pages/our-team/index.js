@@ -1,11 +1,6 @@
-import Image from "next/image";
-import { motion } from "framer-motion";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import LayoutTeam from "../../components/layout-team";
 import GridSimple from "../../components/grid/simple";
-
-import Button from "../../components/button";
 
 import { MobileView, isMobile } from "react-device-detect"
 

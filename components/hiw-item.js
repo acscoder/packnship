@@ -15,11 +15,12 @@ export default class HiwItem extends React.Component{
     render() {
         let step = this.props.data[this.state.index];
         return (<>
-        <motion.div
+        <div
                   initial={{ y: 100, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
+                  exit={{ y: 100, opacity: 0 }}
                   className="hiw_item sm:py-0 py-10"
-                  id="hiw_item_0"
+                  id={"hiw_item_"+this.state.index}
                 >
           <div className="xl:absolute xl:block hidden w-1/2 z-10">
             <Image src={step.image.url} width={step.image.width} height={step.image.height} layout="responsive" />
@@ -36,7 +37,7 @@ export default class HiwItem extends React.Component{
                     {step.description}
                     </p>
                   </div>
-                </motion.div>
+                </div>
 
         </>)
     }
