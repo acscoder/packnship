@@ -60,7 +60,7 @@ export default function GridTeam2({ data }) {
               </figure>
                 <h4 className="font-medium text-xl">{member.name}</h4>
                 <p className="font-medium mb-1">{member.role}</p>
-                <p className="mb-5">{member.description}</p>
+                <p className="mb-5">{member.content}</p>
   <div><span className="icon-mail mx-2"></span><span className="icon-mobile mx-2"></span></div>
                
                
@@ -68,7 +68,7 @@ export default function GridTeam2({ data }) {
                 <div className="w-full">  
                 <h4 className="font-medium text-xl">{member.name}</h4>
                 <p className="font-medium mb-1">{member.role}</p>
-                <p className="mb-8">{member.description}</p>
+                <p className="mb-8">{member.content}</p>
                   <div className="font-medium">
                     <div className="mt-2"><span className="icon-mail mr-2"></span>{member.email}</div>
                     <div className="mt-2"><span className="icon-mobile mr-2"></span>{member.phone_number}</div>

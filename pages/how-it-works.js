@@ -95,7 +95,7 @@ class HIWPage extends React.Component {
               <h3 className=" text-white">{step.title}</h3>
             </div>
             <p className="text-black">
-            {step.description}
+            {step.content}
             </p>
           </div>
         </div>
