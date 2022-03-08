@@ -52,7 +52,7 @@ if(isMobile){
            }}
             className="closenav absolute top-10 right-10"><span className="icon-cross text-black text-6xl"></span></button>
 
-                <div className="xl:min-w-[1270px] w-full mx-auto inline-flex items-center justify-between">
+                <div className="xl:max-w-[1270px] w-full mx-auto inline-flex items-center justify-between">
                     <div className="hidden lg:block"><span className="icon-carton-box text-[350px] text-white"></span></div>
                     <div id="menu" className="md:w-[400px] w-full">
                   
