@@ -34,7 +34,7 @@ export default class HiwItem extends React.Component{
                       {step.title}
                     </h3>
                     <p className="text-black">
-                    {step.description}
+                    {step.content}
                     </p>
                   </div>
                 </div>
