@@ -13,6 +13,7 @@ export default class HiwItem extends React.Component{
         this.setState({ index: props.current_step })
       }
     render() {
+      const parse = require("html-react-parser");
         let step = this.props.data[this.state.index];
         return (<>
         <div
@@ -34,7 +35,7 @@ export default class HiwItem extends React.Component{
                       {step.title}
                     </h3>
                     <p className="text-black">
-                    {step.content}
+                    {parse(step.content)}
                     </p>
                   </div>
                 </div>
