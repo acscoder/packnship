@@ -23,13 +23,18 @@ export default class HiwItem extends React.Component{
                   className="hiw_item sm:py-0 py-10"
                   id={"hiw_item_"+this.state.index}
                 >
-          <div className="xl:absolute xl:block hidden w-1/2 z-10">
+
+{step.image.url && 
+       <>
+       <div className="xl:absolute xl:block hidden w-1/2 z-10">
             <Image src={step.image.url} width={step.image.width} height={step.image.height} layout="responsive" />
           </div>
           <div className="xl:mb-16">
             <Image src={step.image.url} width={step.image.width} height={step.image.height} layout="responsive" />
           </div>
-                  
+       </>
+        }
+        
                   <div className="max-w-2xl sm:px-0 px-6">
                     <h3 className="text-2xl sm:text-4xl mb-2">
                       {step.title}

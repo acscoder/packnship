@@ -85,9 +85,11 @@ class HIWPage extends React.Component {
          <div className={"hiw_item_mobile md:p-10 p-5 md:hidden block h-full h-full-block bg-"+step.class+"-600"} >
         <div className="border-4 border-black h-full">
           
-          <figure className="my-5">
-          <Image src={step.image_mobile.url} width={step.image_mobile.width} height={step.image_mobile.height} layout="responsive" />
-          </figure>
+        {step.image_mobile.url && 
+        <figure className="my-5">
+        <Image src={step.image_mobile.url} width={step.image_mobile.width} height={step.image_mobile.height} layout="responsive" />
+        </figure>
+        }
 
           <div className="max-w-2xl sm:px-0 px-6">
             <div className="inline-flex items-center text-2xl mb-2">
