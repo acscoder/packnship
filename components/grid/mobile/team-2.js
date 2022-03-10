@@ -59,7 +59,8 @@ export default function GridTeam2Mobile({ data,index }) {
                 <div className="w-full">  
                 <h4 className="font-medium text-xl">{member.name}</h4>
                 <p className="font-medium mb-1">{member.role}</p>
-                <p className="mb-8">{parse(member.content)}</p>
+               
+                {member.content&&  <p className="mb-8">{parse(member.content)}</p>}
                   <div className="font-medium">
                     <div className="mt-2"><span className="icon-mail mr-2"></span>{member.email}</div>
                     <div className="mt-2"><span className="icon-mobile mr-2"></span>{member.phone_number}</div>

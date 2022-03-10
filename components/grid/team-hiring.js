@@ -60,7 +60,8 @@ export default function GridTeamHiring({ data }) {
                   <div>     
                   <h4 className="font-medium text-lg">{job.title}</h4>
                   <p className="mb-2">{job.sub_title}</p>
-                  <p className="text-black">{parse(job.content)}</p>
+                  
+                  {job.content&& <p className="text-black">{parse(job.content)}</p>}
                   {job.apply_url?<a href={job.apply_url} target="_blank" className="font-semibold">{getStranslatedString("Jetzt bewerben")}</a>:<p className="text-black">{getStranslatedString("Kommt bald")}</p>}                  
                   </div>
               </div>   
