@@ -25,12 +25,12 @@ export default function Header({slogan,sloganColor,currentSlug,seo,menus}) {
                     <div className="grid xl:grid-cols-5 xl:gap-x-10 grid-cols-2 gap-x-2">
                         <div className="logo py-8 inline-flex items-center ">
                         <Link href="/">
-                            <a className="lg:text-6xl text-3xl"><span className="icon-logo"></span></a>
+                            <a className="2xl:text-6xl xl:text-5xl lg:text-4xl text-3xl"><span className="icon-logo"></span></a>
                         </Link>
                         </div>
                         <div className="col-span-3 xl:block hidden">
                             <div className="py-8 pl-16 border-l-[3px] border-black h-full inline-flex items-center">
-                                <h2 className={"text-3xl font-normal text-"+ sloganColor }>{slogan}</h2>  
+                                <h2 className={"text-[28px] font-normal text-"+ sloganColor }>{slogan}</h2>  
                             </div>
                         </div>
                         <div className="py-8 lg:inline-flex lg:items-center justify-end">
