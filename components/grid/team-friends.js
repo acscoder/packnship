@@ -15,13 +15,13 @@ export default function GridTeamFriends({ data }) {
           {data.title && <motion.h1 className="xl:text-4xl text-3xl mb-3 font-light">{data.title}</motion.h1>}
           {data.content && <div className="text-black">{parse(data.content)}</div>}
 
-          <div className="item_group w-full xl:mt-12 mt-8">
-            <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-5">
+          <div className="item_group w-full xl:mt-16 mt-8">
+            <div className="grid xl:grid-cols-4 lg:grid-cols-2 gap-5">
            
           {data.data_grid.items && data.data_grid.items.map(function(item,index){
           return (
           
-          <div className="border-[3px] p-7 border-black text-base text-center relative" key={"friend_"+index}>
+          <div className="border-[3px] py-7 2xl:px-7 border-black text-base text-center relative" key={"friend_"+index}>
               <figure className="mx-auto h-full inline-flex items-center">
               <Image className="min-w-full" src={item.image.url} width={item.image.width/2} height={item.image.height/2} layout="fixed" />
               </figure>
