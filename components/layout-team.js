@@ -17,7 +17,7 @@ export default function LayoutTeam({ children,data,options }) {
       <section className={"xl:h-screen text-white xl:p-10 p-5 layout_team bg-"+data.background_color+"-600"}>
         <div className="border-4 border-black xl:min-h-full relative">         
             <Header slogan={data.slogan} sloganColor={data.slogan_color}  currentSlug={options.currentSlug} seo={data.seo} menus={options.menus}/>
-            <div className="container w-full lg:mx-auto px-6 content_min_height flex items-center ">
+            <div className="container w-full xl:mx-auto px-6 content_min_height flex items-center">
                 <div className="my-5 lg:grid lg:grid-cols-3 md:grid-cols-2 lg:gap-x-10 xl:gap-x-20 mx-auto xl:max-w-[95%] w-full">
                     <div className="col-span-2">  
                     {children}
