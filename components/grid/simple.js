@@ -3,6 +3,7 @@ import { motion } from "framer-motion"
 import Image from 'next/image'
 export default function GridSimple({ data }) {
   const parse = require('html-react-parser');
+  
   return (
     <>
     {data.thumbnail[0] &&
