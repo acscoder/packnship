@@ -28,7 +28,7 @@
   list-style: none;
   padding-left: 0;
   margin-bottom: 0;
-  margin-top: 20px;
+  
   display: inline-flex!important;
   justify-content: center;
   align-items: center;
@@ -52,11 +52,12 @@
   background-color: #ffffff!important;
 }
 
-
 .bg-cascade .slick-dots > li > button{
   background-color: #56897d;
 }
-
+.layout_team .slick-dots{
+  margin-top: 20px;
+}
 .layout_team.bg-yellow-600 .slick-dots > li > button{
   background-color: rgba(170, 151, 121, var(--tw-bg-opacity));
 }
