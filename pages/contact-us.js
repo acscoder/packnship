@@ -33,7 +33,7 @@ function ContactPage({ data, options }) {
                   {data.title}
                 </motion.h1>
               )}
-             {parse(data.content)}
+             <div className="text-black">{parse(data.content)}</div>
             </div>
           </div>
         </div>
