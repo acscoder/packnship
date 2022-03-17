@@ -38,7 +38,7 @@ function ContactPage({ data, options }) {
 />
      </Head>
       <LayoutSimple data={data} options={options}>
-        <div className="lg:grid lg:grid-cols-3 lg:my-14 my-10">
+        <div className="lg:grid lg:grid-cols-3 lg:my-12 my-10">
           {data.thumbnail && (
             <motion.figure
               initial={{ opacity: 0 }}
