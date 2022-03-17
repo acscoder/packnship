@@ -77,7 +77,7 @@ function ContactPage({ data, options }) {
               return (
                 <div
               className={
-                "border-[3px] xl:p-10 p-4 lg:mb-4 mb-5 border-black transition-colors hover:bg-" +
+                "border-[3px] xl:p-10 py-4 pl-4 pr-2 lg:mb-4 mb-5 border-black transition-colors hover:bg-" +
                 data.background_color +
                 "-700"
               }
