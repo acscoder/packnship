@@ -38,7 +38,7 @@ function ContactPage({ data, options }) {
           </div>
         </div>
 
-        <div className="2xl:mx-[115px] xl:px-0 px-6">
+        <div className="2xl:mx-[115px] 2xl:px-0 px-6">
           <div className="lg:grid lg:grid-cols-4 2xl:gap-10 gap-5">
            
           {data.data_grid.items.length > 0 && data.data_grid.items.map(function(item,index){

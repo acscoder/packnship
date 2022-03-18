@@ -55,7 +55,7 @@ function ContactPage({ data, options }) {
             </motion.figure>
           )}
 
-          <div className="lg:ml-[115px] lg:col-span-1 lg:order-1 h-full inline-flex items-center lg:mt-0 mt-7">
+          <div className="2xl:ml-[115px] lg:col-span-1 lg:order-1 h-full inline-flex items-center lg:mt-0 mt-7">
           <div className="lg:px-0 px-6">
               {data.title && (
                 <motion.h1 className="xl:text-6xl text-3xl mb-3 font-light">
@@ -67,7 +67,7 @@ function ContactPage({ data, options }) {
           </div>
         </div>
 
-        <div className="lg:mx-[115px] xl:px-0 px-6">
+        <div className="2xl:mx-[115px] 2xl:px-0 px-6">
         <Slider {...slider_settings}>
         {items.length && items.map(function(item_group,ind){
           return (
