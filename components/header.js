@@ -21,7 +21,7 @@ export default function Header({slogan,sloganColor,currentSlug,seo,menus}) {
       </Head>
     
 <header className="header border-b-[3px] border-black">
-                <div className="container xl:mx-auto xl:px-0 px-6">
+                <div className="2xl:mx-[105px] 2xl:px-0 px-6">
                     <div className="grid xl:grid-cols-5 xl:gap-x-10 grid-cols-2 gap-x-2">
                         <div className="logo py-8 inline-flex items-center ">
                         <Link href="/">
@@ -34,7 +34,7 @@ export default function Header({slogan,sloganColor,currentSlug,seo,menus}) {
                             </div>
                         </div>
                         <div className="py-8 lg:inline-flex lg:items-center justify-end">
-                            <div className="float-right inline-flex items-center">
+                            <div className="float-right inline-flex items-center lg:w-[200px]">
                                 <div className="text-black font-bold uppercase text-lg lg:text-2xl">
                                 <Link href={currentSlug} locale="de"><a>DE</a></Link>/<Link href={currentSlug} locale="en"><a>EN</a></Link></div>
                                 <button 

@@ -23,11 +23,11 @@ export default function Footer({address,email,hotline}) {
           <span className="icon-chevron-down mx-auto text-3xl"></span>
         </button>
     </div>
-    <div id="footer-bar" className="bg-pink text-white sm:p-10 p-5 hidden">
-    <div className="border-4 border-black relative md:h-[156px]">
-        <div className="container mx-auto md:mt-[18px]">
-            <div className="md:grow md:mr-[320px]">
-                <div className="md:grid xl:grid-cols-3 xl:gap-x-10 2xl:grid-cols-4 2xl:gap-x-20 md:inline-flex h-full items-center md:text-left text-center sm:py-0 py-5">
+    <div id="footer-bar" className="bg-pink text-white xl:p-10 p-5 hidden">
+    <div className="border-4 border-black relative lg:h-[156px]">
+        <div className="2xl:mx-[105px] xl:px-0 px-6 lg:mt-[18px]">
+            <div className="lg:grow lg:mr-[320px]">
+                <div className="lg:grid lg:grid-cols-3 lg:gap-x-10 xl:grid-cols-4 xl:gap-x-20 lg:inline-flex h-full items-center lg:text-left text-center lg:py-0 py-5">
                     <div className="2xl:col-span-2 col-span-1 py-2">
                         <div className="logo">
                         <Link href="/">
@@ -53,7 +53,7 @@ export default function Footer({address,email,hotline}) {
                 </div>
             </div>     
             <Link href="/contact-us">
-            <a className="md:absolute top-0 right-0 block grow-0 text-center sm:w-80 w-full sm:text-3xl text-2xl font-normal sm:border-l-[3px] sm:border-t-0 border-t-[3px] border-black sm:py-14 py-8 hover:bg-cascade transition-colors">Let’s Talk</a>
+            <a className="lg:absolute top-0 right-0 block grow-0 text-center lg:w-80 w-full lg:text-3xl text-2xl font-normal lg:border-l-[3px] lg:border-t-0 border-t-[3px] border-black lg:py-14 py-8 hover:bg-cascade transition-colors">Let’s Talk</a>
             </Link>
         </div>
     </div>

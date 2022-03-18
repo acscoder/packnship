@@ -39,10 +39,10 @@ class HIWPage extends React.Component {
         <div className="border-4 border-black xl:min-h-full relative">
           <Header slogan={this.props.data.slogan} sloganColor={this.props.data.slogan_color} currentSlug={this.props.options.currentSlug} seo={this.props.data.seo} menus={this.props.options.menus}/>
 
-          <div className="container w-fit lg:w-full lg:mx-auto xl:px-0 px-6 min-h-[300px]">
+          <div className="2xl:mx-[105px] 2xl:px-0 px-6 min-h-[300px]">
             <div className="lg:grid grid-cols-2 xl:my-16 my-8">
               <div className="col-span-1 max-w-xl">
-                <h2 className="xl:text-5xl text-3xl font-light mb-2 mt-10 sm:mt-0">
+                <h2 className="2xl:text-5xl xl:text-4xl text-3xl font-light mb-2 mt-10 sm:mt-0">
                   {this.props.data.title}
                 </h2>
                 <div className="text-black">{parse(this.props.data.content)}</div>
