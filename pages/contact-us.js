@@ -29,7 +29,7 @@ function ContactPage({ data, options }) {
           <div className="2xl:ml-[115px] lg:pl-6 lg:col-span-1 lg:order-1 h-full inline-flex items-center lg:mt-0 mt-7">
           <div className="lg:px-0 px-6">
               {data.title && (
-                <motion.h1 className="xl:text-6xl text-3xl mb-3 font-light">
+                <motion.h1 className="2xl:text-6xl xl:text-4xl text-3xl mb-3 font-light">
                   {data.title}
                 </motion.h1>
               )}
