@@ -16,9 +16,17 @@ class HIWPage extends React.Component {
       this.onClickHandler = this.onClickHandler.bind(this);       
   }
   onClickHandler(e){
+    let _this = this
+    let _this_color = e.currentTarget.dataset.color
+    let _this_index = e.currentTarget.dataset.index
+    setTimeout(() =>{
+      _this.setState({
+        theme_color:_this_color,
+        current_step:_this_index
+      });
+    },500)
     this.setState({
-      theme_color:e.currentTarget.dataset.color,
-      current_step:e.currentTarget.dataset.index
+      current_step:-1
     });
 
   }
@@ -41,7 +49,7 @@ class HIWPage extends React.Component {
 
           <div className="2xl:px-0 px-6 min-h-[300px] 2xl:overflow-hidden">
             <div className="lg:grid grid-cols-2 xl:my-16 my-8">
-              <div className="col-span-1 max-w-xl">
+              <div className="col-span-1 max-w-3xl">
                 <div className="2xl:ml-[105px]">
                 <h2 className="2xl:text-5xl xl:text-4xl text-3xl font-light mb-2 mt-10 sm:mt-0">
                   {this.props.data.title}
@@ -74,13 +82,14 @@ class HIWPage extends React.Component {
               <div className="col-span-1 lg:block hidden relative">
               
                 {this.props.data.data_grid.steps && this.props.data.data_grid.steps.map(function(step,index){
-                  let cl = {opacity:0, position:"absolute",top:0,left:0}
+                  let cl = ""
+                  let sty = {opacity:0, position: "absolute"}
                   if(index== _this.state.current_step){
-                    cl = {opacity:1,position:"relative" }
+                    sty = {opacity:1,position:"relative" }
                   }
          return (
-          <div className="hiw_item sm:py-0 py-10 transition-all duration-500" id={"hiw_item_"+index}
-                    key={"hiw_item_"+index} style={cl}
+          <div className={"hiw_item w-full top-0 left-0 sm:py-0 py-10 transition-all duration-500"+cl} id={"hiw_item_"+index}
+                    key={"hiw_item_"+index} style={sty}
                   >
   
   {step.image.url && 
@@ -124,9 +133,9 @@ class HIWPage extends React.Component {
               <strong className={"mr-4 bold text-"+step.class+"-800"}>0{index+1}</strong>
               <h3 className=" text-white">{step.title}</h3>
             </div>
-            <p className="text-black">
+            <div className="text-black">
             {parse(step.content)}
-            </p>
+            </div>
           </div>
         </div>
       </div>
