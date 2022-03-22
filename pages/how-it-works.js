@@ -74,9 +74,9 @@ class HIWPage extends React.Component {
               <div className="col-span-1 lg:block hidden relative">
               
                 {this.props.data.data_grid.steps && this.props.data.data_grid.steps.map(function(step,index){
-                  let cl = {opacity:0, position:"absolute",top:0,left:0, transform: "translate(100px, 0px)" }
+                  let cl = {opacity:0, position:"absolute",top:0,left:0}
                   if(index== _this.state.current_step){
-                    cl = {opacity:1,position:"relative", transform: "translate(0px, 0px)" }
+                    cl = {opacity:1,position:"relative" }
                   }
          return (
           <div className="hiw_item sm:py-0 py-10 transition-all duration-500" id={"hiw_item_"+index}
