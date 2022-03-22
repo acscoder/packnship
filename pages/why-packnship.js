@@ -22,6 +22,7 @@ function ContactPage({ data, options }) {
     dots: true,
     infinite: true,
     speed: 500,
+    
     arrows:false,
     slide:"> div",
     slidesToShow: 1,
