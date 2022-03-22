@@ -27,7 +27,7 @@ export default function Footer({address,email,hotline}) {
     <div className="border-4 border-black relative lg:h-[156px]">
         <div className="2xl:mx-[105px] lg:mt-[18px]">
             <div className="lg:grow lg:mr-[320px]">
-                <div className="lg:grid lg:grid-cols-3 lg:gap-x-10 xl:grid-cols-4 xl:gap-x-20 lg:inline-flex h-full items-center lg:text-left text-center lg:py-0 py-5">
+                <div className="xl:grid xl:grid-cols-3 xl:gap-x-10 2xl:grid-cols-4 2xl:gap-x-20 lg:inline-flex h-full items-center lg:text-left text-center lg:py-0 py-5">
                     <div className="2xl:col-span-2 col-span-1 py-2">
                         <div className="logo">
                         <Link href="/">
