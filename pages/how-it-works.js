@@ -5,7 +5,7 @@ import Footer from "../components/footer";
 import Header from "../components/header";
 import HiwItem from "../components/hiw-item";
 import React from "react";
-import { MobileView, isMobile } from "react-device-detect"
+import { CustomView } from "react-device-detect"
 class HIWPage extends React.Component {
   constructor() {
     super();
@@ -32,23 +32,24 @@ class HIWPage extends React.Component {
       <section
         id="main-content"
         className={
-          "xl:h-full min-h-full text-white xl:p-10 p-5 bg-" +
+          "xl:h-full min-h-full text-white xl:p-10 p-5 transition-colors duration-150 bg-" +
           this.state.theme_color+"-600"
         }
       >
         <div className="border-4 border-black xl:min-h-full relative">
           <Header slogan={this.props.data.slogan} sloganColor={this.props.data.slogan_color} currentSlug={this.props.options.currentSlug} seo={this.props.data.seo} menus={this.props.options.menus}/>
 
-          <div className="2xl:mx-[105px] 2xl:px-0 px-6 min-h-[300px]">
+          <div className="2xl:px-0 px-6 min-h-[300px] 2xl:overflow-hidden">
             <div className="lg:grid grid-cols-2 xl:my-16 my-8">
               <div className="col-span-1 max-w-xl">
+                <div className="2xl:ml-[105px]">
                 <h2 className="2xl:text-5xl xl:text-4xl text-3xl font-light mb-2 mt-10 sm:mt-0">
                   {this.props.data.title}
                 </h2>
                 <div className="text-black">{parse(this.props.data.content)}</div>
       
                 <div
-                  className="sm:text-2xl text-xl font-regular mt-6 md:block hidden"
+                  className="sm:text-2xl text-xl font-regular mt-6 lg:block hidden"
                   id="hiw_menu"
                 >
 
@@ -68,10 +69,37 @@ class HIWPage extends React.Component {
       })}
                 </div>
               </div>
+              </div>
 
-
-              <div className="col-span-1 md:block hidden">
-                <HiwItem current_step={this.state.current_step} data={this.props.data.data_grid.steps}/>          
+              <div className="col-span-1 lg:block hidden relative">
+              
+                {this.props.data.data_grid.steps && this.props.data.data_grid.steps.map(function(step,index){
+                  let cl = {opacity:0, position:"absolute",top:0,left:0, transform: "translate(100px, 0px)" }
+                  if(index== _this.state.current_step){
+                    cl = {opacity:1,position:"relative", transform: "translate(0px, 0px)" }
+                  }
+         return (
+          <div className="hiw_item sm:py-0 py-10 transition-all duration-500" id={"hiw_item_"+index}
+                    key={"hiw_item_"+index} style={cl}
+                  >
+  
+  {step.image.url && 
+            <div className="xl:mb-5">
+              <Image src={step.image.url} width={step.image.width} height={step.image.height} layout="responsive" />
+            </div>
+          }
+          
+                    <div className="max-w-2xl sm:px-0 px-6">
+                      <h3 className="text-2xl sm:text-4xl mb-2">
+                        {step.title}
+                      </h3>
+                      <p className="text-black">
+                      {parse(step.content)}
+                      </p>
+                    </div>
+                  </div>
+          )
+        })}          
               </div>
 
             </div>
@@ -79,10 +107,10 @@ class HIWPage extends React.Component {
         </div>
       </section>
     
-    <MobileView>
+    <div className="xl:hidden block">
       {this.props.data.data_grid.steps &&this.props.data.data_grid.steps.map(function(step,index){
         return (<div key={"step_m_"+index}>
-         <div className={"hiw_item_mobile md:p-10 p-5 md:hidden block h-full h-full-block bg-"+step.class+"-600"} >
+         <div className={"hiw_item_mobile md:p-10 p-5 h-full h-full-block bg-"+step.class+"-600"} >
         <div className="border-4 border-black h-full">
           
         {step.image_mobile.url && 
@@ -91,20 +119,20 @@ class HIWPage extends React.Component {
         </figure>
         }
 
-          <div className="max-w-2xl sm:px-0 px-6">
+          <div className="xl:max-w-2xl px-6 mb-5">
             <div className="inline-flex items-center text-2xl mb-2">
               <strong className={"mr-4 bold text-"+step.class+"-800"}>0{index+1}</strong>
               <h3 className=" text-white">{step.title}</h3>
             </div>
             <p className="text-black">
-            {step.content}
+            {parse(step.content)}
             </p>
           </div>
         </div>
       </div>
         </div>)
       })}
-    </MobileView>
+    </div>
 
       <Footer
         address={this.props.options.address}

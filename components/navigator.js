@@ -58,11 +58,12 @@ if(isMobile){
                   
                     {this.props.menus.map(function(item,index){
                         if(item.sub_menu.length > 0){
+                            console.log(item)
                             return (
-                                <div className="border-b-[3px] border-black py-4" key={index}>
+                                <div className={"border-b-[3px] border-black py-4 hover:bg-"+item.color} key={index}>
                                 <button data-href={item.url} data-color={item.color}
                                                             className={"group h-10 w-full inline-flex items-center text-left transition-colors text-2xl font-normal hover:bg-"+item.color}
-                                                            onClick={_this.onClickHandler}
+                                                           
                                                             >
                                                         <strong className={"ml-6 mr-8 group-hover:text-white number font-black "}>0{index+1}</strong>
                                                         <span>{item.title}</span> 
