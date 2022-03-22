@@ -37,14 +37,14 @@ export default function Footer({address,email,hotline}) {
                     </div>
                     <div className="col-span-1 py-2">
                         <div className="h-full inline-flex items-center">
-                            <div className="text-base xl:text-2xl ">
+                            <div className="text-base 2xl:text-2xl xl:text-xl">
                             {parse(address)}
                             </div>
                         </div> 
                     </div>
                     <div className="col-span-1 py-2">
                         <div className="h-full inline-flex items-center">
-                            <div className="text-base xl:text-2xl">
+                            <div className="text-base 2xl:text-2xl xl:text-xl">
                                 {email}<br/>
                                 {hotline}
                             </div>
