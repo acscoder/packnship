@@ -88,7 +88,7 @@ class HIWPage extends React.Component {
                     sty = {opacity:1,position:"relative" }
                   }
          return (
-          <div className={"hiw_item w-full top-0 left-0 sm:py-0 py-10 transition-all duration-500"+cl} id={"hiw_item_"+index}
+          <div className={"hiw_item w-full top-0 left-0 sm:py-0 py-10 transition-all duration-500 "+cl} id={"hiw_item_"+index}
                     key={"hiw_item_"+index} style={sty}
                   >
   

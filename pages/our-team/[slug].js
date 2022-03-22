@@ -22,7 +22,7 @@ function TeamPage({ data,options }) {
       comp = <GridTeam1 data={data}/>;
       break; 
       case "team-2":
-      comp = <GridTeam2 data={data}/>;
+      comp = <GridTeam1 data={data}/>;
       break; 
       case "hiring":
       comp = <GridTeamHiring data={data}/>;

@@ -3,6 +3,7 @@ import Head from 'next/head'
 import React from "react"
 import { useRouter } from 'next/router'
 import Navigator from "../components/navigator"
+import LanguageBar from "../components/language-bar"
 
 export default function Header({slogan,sloganColor,currentSlug,seo,menus}) {
     if(!currentSlug){currentSlug = '/';}
@@ -36,7 +37,8 @@ export default function Header({slogan,sloganColor,currentSlug,seo,menus}) {
                         <div className="py-8 lg:inline-flex lg:items-center justify-end">
                             <div className="float-right inline-flex items-center lg:w-[200px]">
                                 <div className="text-black font-bold uppercase text-lg lg:text-2xl">
-                                <Link href={currentSlug} locale="de"><a>DE</a></Link>/<Link href={currentSlug} locale="en"><a>EN</a></Link></div>
+                                <LanguageBar currentSlug ={currentSlug}/>
+                                </div>
                                 <button 
                                  onClick={(e) => {
                                    window.Transition0Component.setState({isVisible:true,color:"cascade-900"});    
@@ -51,7 +53,7 @@ export default function Header({slogan,sloganColor,currentSlug,seo,menus}) {
                     </div>
                 </div>
             </header>
-            {menus['top-menu-'+locale] && (<Navigator menus={menus['top-menu-'+locale]}/> )}
+            {menus['top-menu-'+locale] && (<Navigator currentSlug ={currentSlug} menus={menus['top-menu-'+locale]}/> )}
     </>
     )
 }

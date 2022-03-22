@@ -2,6 +2,7 @@ import React from "react";
 import { motion,AnimatePresence } from "framer-motion";
 import { useRouter,withRouter } from 'next/router'
 import { isMobile } from "react-device-detect"
+import LanguageBar from "../components/language-bar"
 
 class Navigator extends React.Component {
     constructor() {
@@ -46,11 +47,17 @@ if(isMobile){
             exit={{ opacity: 0 }}
             className={"fixed top-0 left-0 w-full h-full text-white xl:p-10 p-5 z-20 inline-flex items-center bg-"+this.state.color} id="navigator">
             
+<div className="absolute top-10 right-10 inline-flex items-center">
+            <div className="text-black font-bold uppercase text-lg lg:text-2xl pr-3">
+                                <LanguageBar currentSlug ={this.props.currentSlug}/>
+                                </div>
             <button 
              onClick={(e) => {    
                 window.NavigatorComponent.setState({isVisible:false});
            }}
-            className="closenav absolute top-10 right-10"><span className="icon-cross text-black text-6xl"></span></button>
+            className="closenav ">
+                <span className="icon-cross text-black text-6xl"></span></button>
+                </div>
 
                 <div className="xl:max-w-[1270px] w-full mx-auto inline-flex items-center justify-between">
                     <div className="hidden lg:block"><span className="icon-carton-box text-[350px] text-white"></span></div>
