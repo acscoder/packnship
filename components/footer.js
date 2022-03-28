@@ -45,8 +45,8 @@ export default function Footer({address,email,hotline}) {
                     <div className="col-span-1 py-2">
                         <div className="h-full inline-flex items-center">
                             <div className="text-base 3xl:text-2xl 2xl:text-xl">
-                                {email}<br/>
-                                {hotline}
+                                <a href={"mailto:"+email} className="" rel="nofollow">{email}</a><br/>
+                                <a href={"tel:"+hotline} className="" rel="nofollow">{hotline}</a>
                             </div>
                         </div>
                     </div>
