@@ -21,7 +21,7 @@ export default function GridTeamFriends({ data }) {
           {data.data_grid.items && data.data_grid.items.map(function(item,index){
           return (
           
-          <div className="border-[3px] py-7 2xl:px-7 border-black text-base text-center relative" key={"friend_"+index}>
+          <div className="border-[3px] py-7 border-black text-base text-center relative" key={"friend_"+index}>
               <figure className="mx-auto h-full inline-flex items-center">
               <Image className="min-w-full" src={item.image.url} width={item.image.width/2} height={item.image.height/2} layout="fixed" />
               </figure>
