@@ -53,13 +53,7 @@ export async function getStaticProps(context) {
   );
   let data = await res_data.json()
   
-  options.currentSlug = "/our-team";
-
-  let menu = [['/our-team',data.page_title]]
-    Object.keys(data.sub_page).map(function(page,index){
-      menu.push( ['/our-team/'+page,data.sub_page[page].page_title] )
-    })
-    data.menu = menu
+  options.currentSlug = "our-team";
 
   return { props: { data, options }, revalidate: 5 };
 }

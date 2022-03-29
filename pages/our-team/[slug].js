@@ -36,12 +36,12 @@ function TeamPage({ data,options }) {
 }
 export async function getStaticPaths() {
   const ver = Math.random()
-  const res_data = await fetch(process.env.NEXT_PUBLIC_WORDPRESS_DATA_URL+"/de/our-team.json?ver="+ver)
+  const res_data = await fetch(process.env.NEXT_PUBLIC_WORDPRESS_DATA_URL+"/de/options.json?ver="+ver)
    
   const data = await res_data.json()
 
-  const paths = Object.keys(data.sub_page).map((post) => ({
-    params: { slug: post },
+  const paths = data.our_team.map((post) => ({
+    params: { slug: post.post_name },
   }));
 
   return {
@@ -53,17 +53,11 @@ export async function getStaticProps(context) {
     const ver = Math.random()
     const res_options = await fetch(process.env.NEXT_PUBLIC_WORDPRESS_DATA_URL+"/"+context.locale+"/options.json?ver="+ver)
     const options = await res_options.json()
-    const res_data = await fetch(process.env.NEXT_PUBLIC_WORDPRESS_DATA_URL+"/"+context.locale+"/our-team.json?ver="+ver)
+    const res_data = await fetch(process.env.NEXT_PUBLIC_WORDPRESS_DATA_URL+"/"+context.locale+"/"+context.params.slug+".json?ver="+ver)
    
-    const data_team = await res_data.json()
-    let data = data_team.sub_page[context.params.slug] 
+    const data = await res_data.json()
     
-    options.currentSlug = "/our-team/"+context.params.slug 
-    let menu = [['/our-team',data_team.page_title]]
-    Object.keys(data_team.sub_page).map(function(page,index){
-      menu.push( ['/our-team/'+page,data_team.sub_page[page].page_title] )
-    })
-    data.menu = menu
+    options.currentSlug =  context.params.slug 
    
     return { props: { data,options },revalidate: 5  }
   }

@@ -26,11 +26,15 @@ export default function LayoutTeam({ children,data,options }) {
                         <div className="flex items-center h-full">
                             <div className="w-full sm:text-2xl text-xl font-regular">
                                 
-                                {data.menu && data.menu.map(function(menu_item,index){
-                                    return (<div className=""><Link href={menu_item[0]}>
-                                      <a className={"hiw_menu_item group h-20 w-full inline-flex items-center border-b-[3px] border-black text-left transition-colors "+(options.currentSlug==menu_item[0]?"bg-":"hover:bg-")+data.background_color+"-700"}>
-                                        <strong className={"ml-6 mr-8 group-hover:text-white number font-black "+(options.currentSlug==menu_item[0]?"text-white":"text-"+data.background_color+"-800")}>0{index+1}</strong>
-                                        <span className="sm:w-56 leading-none font-normal">{menu_item[1]}</span></a></Link></div>)
+                                {options.our_team && options.our_team.map(function(menu_item,index){
+                                  let clink = '/our-team'
+                                  if(menu_item.post_name!='our-team'){
+                                    clink = '/our-team/'+menu_item.post_name
+                                  }
+                                    return (<div className=""><Link href={clink}>
+                                      <a className={"hiw_menu_item group h-20 w-full inline-flex items-center border-b-[3px] border-black text-left transition-colors "+(options.currentSlug==menu_item.post_name?"bg-":"hover:bg-")+data.background_color+"-700"}>
+                                        <strong className={"ml-6 mr-8 group-hover:text-white number font-black "+(options.currentSlug==menu_item.post_name?"text-white":"text-"+data.background_color+"-800")}>0{index+1}</strong>
+                                        <span className="sm:w-56 leading-none font-normal">{menu_item.post_title}</span></a></Link></div>)
                                 })}
                             </div>  
                         </div>                          
