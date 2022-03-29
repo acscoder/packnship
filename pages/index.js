@@ -18,12 +18,10 @@ function HomePage({ data,options }) {
                     <div className="col-span-2">
                         <div className="">
                             <motion.h1 className="2xl:text-6xl xl:text-5xl text-3xl font-light">{data.title}</motion.h1>
-                        </div>
-                        
+                        </div>                        
                     </div>
                     <motion.div initial={{ y: 100, opacity: 0 }} animate={{ y: 0, opacity: 1 }} className="col-span-3 text-black">
-                    {parse(data.content)}
-                        
+                    {parse(data.content)}                        
                     </motion.div>
                 </div>
             </div>
