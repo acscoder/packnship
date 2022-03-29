@@ -87,7 +87,7 @@ if(isMobile){
     animate={{ x: 0 }}
     initial={{ x: 100 }}
 
-    data-href={sub_menu.url} data-color={sub_menu.color}
+    data-href={'/'+sub_menu.url} data-color={sub_menu.color}
                                 className={"block font-light py-1 hover:text-black"}
                                 onClick={_this.onClickHandler}
                                 key={ind}>

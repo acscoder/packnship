@@ -47,7 +47,7 @@ class HIWPage extends React.Component {
         <div className="border-4 border-black xl:min-h-full relative">
           <Header slogan={this.props.data.slogan} sloganColor={this.props.data.slogan_color} currentSlug={this.props.options.currentSlug} seo={this.props.data.seo} menus={this.props.options.menus}/>
 
-          <div className="2xl:px-0 px-6 min-h-[600px] ">
+          <div className="2xl:px-0 px-6 2xl:min-h-[600px] ">
             <div className="lg:grid grid-cols-2 2xl:my-12 my-8">
               <div className="col-span-1 max-w-3xl">
                 <div className="2xl:ml-[105px]">
