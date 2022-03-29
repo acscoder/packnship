@@ -21,9 +21,7 @@
 #__next,body,html{
   height: 100%;
 }
-#main-content{
-  overflow: auto;
-}
+
 .content_min_height{
   min-height: calc(100vh - 230px);
 }

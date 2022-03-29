@@ -3,31 +3,57 @@ import { motion } from "framer-motion";
 import Slider from "react-slick"
 import LayoutSimple from "../components/layout-simple";
 import Head from 'next/head'
+import React from "react";
 
-function ContactPage({ data, options }) {
+  class ContactPage extends React.Component {
+    constructor() {
+      super();
+      
+         
+    }
+    renderArrows = () => {
+      return (
+        <div className="as-slider-arrow">
+          <button
+            className="arrow-btn prev absolute top-[200px] 2xl:left-[-70px] left-0 text-3xl text-black"
+            onClick={() => this.slider.slickPrev()}
+          >
+           <span className="icon-chevron-thin-left"></span>
+          </button>
+          <button
+            className="arrow-btn next absolute top-[200px] 2xl:right-[-70px] right-0 text-3xl text-black"
+            onClick={() => this.slider.slickNext()}
+          >
+           <span className="icon-chevron-thin-right"></span>
+          </button>
+        </div>
+      );
+    };
+    render() {
   const parse = require("html-react-parser");
   let items = [[]]
   let items_tem = 0
-  if(data.data_grid.items.length>3){
-  data.data_grid.items.forEach(async (member,index) => {
+  if(this.props.data.data_grid.items.length>3){
+    this.props.data.data_grid.items.forEach(async (member,index) => {
     if(index>0&&index%3==0){
       items_tem++
       items[items_tem] = []  
     }
     items[items_tem].push(member) 
   })}else{
-    items[0] = data.data_grid.items
+    items[0] = this.props.data.data_grid.items
   }
   const slider_settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
-    
     arrows:false,
     slide:"> div",
     slidesToShow: 1,
-    slidesToScroll: 1
+    slidesToScroll: 1,
+    
   };
+  var _this = this
   return (
     <>
      <Head>
@@ -38,9 +64,9 @@ function ContactPage({ data, options }) {
   href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
 />
      </Head>
-      <LayoutSimple data={data} options={options}>
+      <LayoutSimple data={this.props.data} options={this.props.options}>
         <div className="lg:grid lg:grid-cols-3 lg:my-12 my-10">
-          {data.thumbnail && (
+          {this.props.data.thumbnail && (
             <motion.figure
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -48,9 +74,9 @@ function ContactPage({ data, options }) {
               layoutId="image"
             >
               <Image
-                src={data.thumbnail[0]}
-                width={data.thumbnail[1]}
-                height={data.thumbnail[2]}
+                src={this.props.data.thumbnail[0]}
+                width={this.props.data.thumbnail[1]}
+                height={this.props.data.thumbnail[2]}
                 layout="responsive"
               />
             </motion.figure>
@@ -58,18 +84,19 @@ function ContactPage({ data, options }) {
 
           <div className="2xl:ml-[115px] lg:col-span-1 lg:order-1 h-full inline-flex items-center lg:mt-0 mt-7">
           <div className="lg:px-0 px-6">
-              {data.title && (
+              {_this.props.data.title && (
                 <motion.h1 className="2xl:text-6xl xl:text-4xl text-3xl mb-3 font-light">
-                  {data.title}
+                  {_this.props.data.title}
                 </motion.h1>
               )}
-             <div className="text-black">{parse(data.content)}</div>
+             <div className="text-black">{parse(_this.props.data.content)}</div>
             </div>
           </div>
         </div>
 
-        <div className="2xl:mx-[115px] 2xl:px-0 px-6">
-        <Slider {...slider_settings}>
+        <div className="2xl:mx-[115px] 2xl:px-0 px-6 relative">
+        {this.renderArrows()}
+        <Slider {...slider_settings} ref={c => (this.slider = c)}>
         {items.length && items.map(function(item_group,ind){
           return (
             <div className="item_group w-full" key={"item_group_"+ind}>
@@ -79,7 +106,7 @@ function ContactPage({ data, options }) {
                 <div
               className={
                 "border-[3px] xl:py-8 xl:pl-10 xl:pr-5 p-5 lg:mb-4 mb-5 border-black transition-colors hover:bg-" +
-                data.background_color +
+                _this.props.data.background_color +
                 "-700"
               }
               key={"item_"+index}
@@ -104,6 +131,7 @@ function ContactPage({ data, options }) {
       </LayoutSimple>
     </>
   );
+        }
 }
 
 export async function getStaticProps(context) {

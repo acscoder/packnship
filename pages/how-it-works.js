@@ -40,15 +40,15 @@ class HIWPage extends React.Component {
       <section
         id="main-content"
         className={
-          "xl:h-full min-h-full text-white xl:p-10 p-5 transition-colors duration-150 bg-" +
+          "min-h-full text-white xl:p-10 p-5 transition-colors duration-150 bg-" +
           this.state.theme_color+"-600"
         }
       >
         <div className="border-4 border-black xl:min-h-full relative">
           <Header slogan={this.props.data.slogan} sloganColor={this.props.data.slogan_color} currentSlug={this.props.options.currentSlug} seo={this.props.data.seo} menus={this.props.options.menus}/>
 
-          <div className="2xl:px-0 px-6 min-h-[300px] 2xl:overflow-hidden">
-            <div className="lg:grid grid-cols-2 xl:my-16 my-8">
+          <div className="2xl:px-0 px-6 min-h-[600px] ">
+            <div className="lg:grid grid-cols-2 2xl:my-12 my-8">
               <div className="col-span-1 max-w-3xl">
                 <div className="2xl:ml-[105px]">
                 <h2 className="2xl:text-5xl xl:text-4xl text-3xl font-light mb-2 mt-10 sm:mt-0">
