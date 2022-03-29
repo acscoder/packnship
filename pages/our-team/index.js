@@ -55,7 +55,7 @@ export async function getStaticProps(context) {
   
   options.currentSlug = "/our-team";
 
-  let menu = [['/our-team',data_team.page_title]]
+  let menu = [['/our-team',data.page_title]]
     Object.keys(data.sub_page).map(function(page,index){
       menu.push( ['/our-team/'+page,data.sub_page[page].page_title] )
     })
