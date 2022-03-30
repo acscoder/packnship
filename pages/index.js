@@ -13,7 +13,7 @@ function HomePage({ data,options }) {
   animate={{ opacity: 1 }} className="featured-image mt-6" layoutId="image">
             <Image src={data.thumbnail[0]} width={data.thumbnail[1]} height={data.thumbnail[2]} layout="responsive" />
             </motion.figure>
-            <div className="2xl:mx-[115px] xl:px-0 px-6">
+            <div className="2xl:mx-[115px] px-6">
                 <div className="md:grid md:grid-cols-5 md:gap-x-10 lg:gap-x-20">
                     <div className="col-span-2">
                         <div className="">

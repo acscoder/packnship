@@ -21,21 +21,23 @@ export default function Header({slogan,sloganColor,currentSlug,seo,menus}) {
         {parse(seo)}
       </Head>
     
-<header className="header border-b-[3px] border-black">
-                <div className="2xl:mx-[105px] 2xl:px-0 px-6">
-                    <div className="grid xl:grid-cols-5 xl:gap-x-10 grid-cols-2 gap-x-2">
-                        <div className="logo py-8 inline-flex items-center ">
+<header className="header border-b-[3px] border-black ">
+              
+                    <div className="inline-block w-full lg:h-[135px] h-[84px]">
+                        <div className="float-left 2xl:w-[1000px] xl:w-[800px]">
+                        <div className="logo inline-flex items-center lg:h-[142px] h-[84px] 2xl:px-[105px] xl:px-[80px] lg:px-[40px] px-6 border-black lg:border-r-[3px] float-left">
                         <Link href="/">
                             <a className="2xl:text-6xl xl:text-5xl lg:text-4xl text-3xl"><span className="icon-logo"></span></a>
                         </Link>
                         </div>
-                        <div className="col-span-3 xl:block hidden">
-                            <div className="py-8 pl-16 border-l-[3px] border-black h-full inline-flex items-center">
-                                <h2 className={"text-[28px] font-normal text-"+ sloganColor }>{slogan}</h2>  
+                        <div className="xl:block hidden">
+                            <div className="py-8 pl-16 border-black h-full inline-flex items-center lg:h-[135px] h-[84px]">
+                                <h2 className={"2xl:text-[28px] xl:text-2xl font-normal text-"+ sloganColor }>{slogan}</h2>  
                             </div>
                         </div>
-                        <div className="py-8 lg:inline-flex lg:items-center justify-end">
-                            <div className="float-right inline-flex items-center lg:w-[200px]">
+                        </div>
+                        <div className="float-right 2xl:mr-[105px] xl:mr-[80px] xl:pr-0 pr-6">
+                            <div className="inline-flex items-center lg:w-[200px] lg:h-[135px] h-[84px]">
                                 <div className="text-black font-bold uppercase text-lg lg:text-2xl">
                                 <LanguageBar currentSlug ={currentSlug}/>
                                 </div>
@@ -51,7 +53,7 @@ export default function Header({slogan,sloganColor,currentSlug,seo,menus}) {
                             
                         </div>
                     </div>
-                </div>
+                
             </header>
             {menus['top-menu-'+locale] && (<Navigator currentSlug ={currentSlug} menus={menus['top-menu-'+locale]}/> )}
     </>
