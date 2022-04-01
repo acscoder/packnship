@@ -25,6 +25,10 @@
 .content_min_height{
   min-height: calc(100vh - 230px);
 }
+.text-block > p{
+  margin-top:10px;
+  margin-bottom:10px;
+}
  .slick-dots{
   list-style: none;
   padding-left: 0;
