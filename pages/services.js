@@ -132,7 +132,8 @@ class ServicesPage extends React.Component {
                     key={"hiw_item_"+index} style={sty}
                   >
   
-  {_this.renderArrows(index)}
+  {step.images.length >1&&_this.renderArrows(index)}
+
   {step.images.length >1 && <Slider {...slider_settings} ref={c => (_this['slider'+index] = c)}>
   {step.images.map(function(image,ind){
     return (
