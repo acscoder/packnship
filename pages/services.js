@@ -119,8 +119,8 @@ class ServicesPage extends React.Component {
               </div>
               </div>
 
-              <div className="col-span-1 relative">
-              
+              <div className="col-span-1 "> <div className="  md:w-[500px] mx-auto ">
+            
                 {this.props.data.data_grid.steps && this.props.data.data_grid.steps.map(function(step,index){
                   let cl = ""
                   let sty = {opacity:0, position: "absolute",zIndex:-1}
@@ -161,8 +161,8 @@ class ServicesPage extends React.Component {
           )
         })}          
               </div>
-
-            </div>
+              </div>
+              </div>
           </div>
         </div>
       </section>
