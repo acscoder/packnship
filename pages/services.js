@@ -119,22 +119,21 @@ class ServicesPage extends React.Component {
               </div>
               </div>
 
-              <div className="col-span-1 "> <div className="  md:w-[500px] mx-auto ">
+              <div className="col-span-1 "> 
             
                 {this.props.data.data_grid.steps && this.props.data.data_grid.steps.map(function(step,index){
                   let cl = ""
-                  let sty = {opacity:0, position: "absolute",zIndex:-1}
+                  let sty = {opacity:0,  position: "absolute",height:"100%",overflow: "hidden",zIndex:-9}
                   if(index== _this.state.current_step){
-                    sty = {opacity:1,position:"relative",zIndex:9 }
+                    sty = {opacity:1,position:"relative",height:"auto",overflow: "initial",zIndex:9 }
                   }
          return (
-          <div className={"hiw_item w-full top-0 left-0 sm:py-0 py-10 transition-all duration-500 "+cl} id={"hiw_item_"+index}
+          <div className={"hiw_item w-full top-0 left-0 sm:py-0 py-10 transition-opacity duration-500 "+cl} id={"hiw_item_"+index}
                     key={"hiw_item_"+index} style={sty}
                   >
   
-  {step.contents.length > 1&&_this.renderArrows(index)}
-
-  {step.contents.length >1 && <Slider {...slider_settings} ref={c => (_this['slider'+index] = c)}>
+  
+  {step.contents.length >1 && <div className="md:w-[500px] mx-auto relative">{_this.renderArrows(index)}<Slider {...slider_settings} ref={c => (_this['slider'+index] = c)}>
   {step.contents.map(function(item,ind){
     return (
       <div className="image_slider" key={"image_slider_"+ind}>
@@ -146,8 +145,8 @@ class ServicesPage extends React.Component {
               </div>
     )
   })}
-  </Slider>}
-  {step.contents.length ==1 && <div className="image_slider">
+  </Slider> </div>}
+  {step.contents.length ==1 && <div className="">
               <Image src={step.contents[0].image.url} width={step.contents[0].image.width} height={step.contents[0].image.height} layout="responsive" />
               <div className="text-black max-w-2xl sm:px-0 px-6 mt-5">
               <h3 className="text-2xl sm:text-4xl mb-2 text-white">{step.contents[0].title}</h3>
@@ -161,7 +160,7 @@ class ServicesPage extends React.Component {
           )
         })}          
               </div>
-              </div>
+             
               </div>
           </div>
         </div>
