@@ -57,7 +57,7 @@ class ServicesPage extends React.Component {
   const parse = require("html-react-parser");
     if(this.state.theme_color=='')this.state.theme_color = this.props.data.background_color
     const slider_settings = {
-      dots: true,
+      dots: false,
       infinite: true,
       speed: 500,
       arrows:false,
@@ -102,7 +102,7 @@ class ServicesPage extends React.Component {
                 >
 
 {this.props.data.data_grid.steps &&this.props.data.data_grid.steps.map(function(step,index){
- 
+
         return (<div className="md:w-[500px]"  key={"step_b_"+index}>
           <button data-color={step.background_color} data-scolor={step.slogan_color} data-index={index} onClick={_this.onClickHandler} className={"hiw_menu_item group h-20 w-full inline-flex items-center border-b-[3px] border-black text-left transition-colors "+(_this.state.current_step==index ? 'bg-'+_this.state.theme_color : 'hover:bg-'+_this.state.theme_color)+"-700"}
                     >
@@ -132,27 +132,31 @@ class ServicesPage extends React.Component {
                     key={"hiw_item_"+index} style={sty}
                   >
   
-  {step.images.length >1&&_this.renderArrows(index)}
+  {step.contents.length > 1&&_this.renderArrows(index)}
 
-  {step.images.length >1 && <Slider {...slider_settings} ref={c => (_this['slider'+index] = c)}>
-  {step.images.map(function(image,ind){
+  {step.contents.length >1 && <Slider {...slider_settings} ref={c => (_this['slider'+index] = c)}>
+  {step.contents.map(function(item,ind){
     return (
-      <div className="image_slider border-[3px] border-black" key={"image_slider_"+ind}>
-              <Image src={image.url} width={image.width} height={image.height} layout="responsive" />
+      <div className="image_slider" key={"image_slider_"+ind}>
+              <Image src={item.image.url} width={item.image.width} height={item.image.height} layout="responsive" />
+              <div className="text-black max-w-2xl sm:px-0 px-6 mt-5">
+              <h3 className="text-2xl sm:text-4xl mb-2 text-white">{item.title}</h3>
+              {item.content}
+              </div>
               </div>
     )
   })}
   </Slider>}
-  {step.images.length ==1 && <div className="image_slider">
-              <Image src={step.images[0].url} width={step.images[0].width} height={step.images[0].height} layout="responsive" />
+  {step.contents.length ==1 && <div className="image_slider">
+              <Image src={step.contents[0].image.url} width={step.contents[0].image.width} height={step.contents[0].image.height} layout="responsive" />
+              <div className="text-black max-w-2xl sm:px-0 px-6 mt-5">
+              <h3 className="text-2xl sm:text-4xl mb-2 text-white">{step.contents[0].title}</h3>
+              {step.contents[0].content}
+              </div>
               </div>}
           
-                    <div className="max-w-2xl sm:px-0 px-6 mt-5">
-                     
-                      <div className="text-black scontent">
-                      {parse(step.content)}
-                      </div>
-                    </div>
+                    
+                    
                   </div>
           )
         })}          
