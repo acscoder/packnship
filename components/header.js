@@ -1,11 +1,12 @@
 import Link from 'next/link'
 import Head from 'next/head'
 import React from "react"
-import { useRouter } from 'next/router'
+import { useRouter,withRouter } from 'next/router'
 import Navigator from "../components/navigator"
 import LanguageBar from "../components/language-bar"
 
-export default function Header({slogan,sloganColor,currentSlug,seo,menus}) {
+
+function Header({slogan,sloganColor,currentSlug,seo,menus}) {
     if(!currentSlug){currentSlug = '/';}
     const parse = require('html-react-parser');
     const router = useRouter()
@@ -32,7 +33,7 @@ export default function Header({slogan,sloganColor,currentSlug,seo,menus}) {
                         </div>
                         <div className="xl:block hidden">
                             <div className="py-8 pl-16 border-black h-full inline-flex items-center lg:h-[135px] h-[84px]">
-                                <h2 className={"2xl:text-[28px] xl:text-2xl font-normal text-"+ sloganColor }>{slogan}</h2>  
+                                <h2 id="slogan" className={"2xl:text-[28px] xl:text-2xl font-normal text-"+ sloganColor }>{slogan}</h2>  
                             </div>
                         </div>
                         </div>
@@ -59,3 +60,4 @@ export default function Header({slogan,sloganColor,currentSlug,seo,menus}) {
     </>
     )
 }
+export default Header

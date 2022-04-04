@@ -20,11 +20,14 @@ class ServicesPage extends React.Component {
     let _this = this
     let _this_color = e.currentTarget.dataset.color
     let _this_index = e.currentTarget.dataset.index
+    let _this_scolor = e.currentTarget.dataset.scolor
     setTimeout(() =>{
       _this.setState({
         theme_color:_this_color,
+        slogan_color:_this_scolor,
         current_step:_this_index
       });
+      document.getElementById('slogan').style.color = _this_scolor
     },500)
     this.setState({
       current_step:-1
@@ -99,12 +102,12 @@ class ServicesPage extends React.Component {
                 >
 
 {this.props.data.data_grid.steps &&this.props.data.data_grid.steps.map(function(step,index){
-  
+ 
         return (<div className="md:w-[500px]"  key={"step_b_"+index}>
-          <button data-color={step.class} data-index={index} onClick={_this.onClickHandler} className={"hiw_menu_item group h-20 w-full inline-flex items-center border-b-[3px] border-black text-left transition-colors "+(_this.state.current_step==index ? 'bg-'+_this.state.theme_color : 'hover:bg-'+_this.state.theme_color)+"-700"}
+          <button data-color={step.background_color} data-scolor={step.slogan_color} data-index={index} onClick={_this.onClickHandler} className={"hiw_menu_item group h-20 w-full inline-flex items-center border-b-[3px] border-black text-left transition-colors "+(_this.state.current_step==index ? 'bg-'+_this.state.theme_color : 'hover:bg-'+_this.state.theme_color)+"-700"}
                     >
                       <strong className={"ml-6 mr-8 number "+ (_this.state.current_step==index ? 'text-white' : 'group-hover:text-white text-'+_this.state.theme_color+"-800")} >
-                        0{index+1}
+                        0{index}
                       </strong>
                       <span className="sm:w-56 leading-none">
                         {step.title}
@@ -142,7 +145,7 @@ class ServicesPage extends React.Component {
           
                     <div className="max-w-2xl sm:px-0 px-6 mt-5">
                      
-                      <div className="text-black">
+                      <div className="text-black scontent">
                       {parse(step.content)}
                       </div>
                     </div>
