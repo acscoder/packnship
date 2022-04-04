@@ -136,7 +136,7 @@ class ServicesPage extends React.Component {
   <Slider {...slider_settings} ref={c => (_this['slider'+index] = c)}>
   {step.images.length && step.images.map(function(image,ind){
     return (
-      <div className="image_slider border-[3px] border-black" key={"image_slider_"+ind}>
+      <div className="image_slider " key={"image_slider_"+ind}>
               <Image src={image.url} width={image.width} height={image.height} layout="responsive" />
               </div>
     )
