@@ -34,7 +34,7 @@ if(isMobile){
       }
     render() {
        let _this = this
-
+       const {locale} = this.props.router
        //console.log(this.props.menus)   
 
         return (
@@ -48,8 +48,8 @@ if(isMobile){
             className={"fixed top-0 left-0 w-full h-full text-white xl:p-10 p-5 z-20 inline-flex items-center bg-"+this.state.color} id="navigator">
             
 <div className="absolute top-10 right-10 inline-flex items-center">
-            <div className="text-black font-bold uppercase text-lg lg:text-2xl pr-3">
-                                <LanguageBar currentSlug ={this.props.currentSlug}/>
+            <div className="text-black font-normal uppercase text-lg lg:text-2xl pr-3">
+                                <LanguageBar locale={locale} currentSlug ={this.props.currentSlug}/>
                                 </div>
             <button 
              onClick={(e) => {    
@@ -65,7 +65,7 @@ if(isMobile){
                   
                     {this.props.menus.map(function(item,index){
                         if(item.sub_menu.length > 0){
-                            console.log(item)
+                           
                             return (
                                 <div className={"border-b-[3px] border-black py-4 hover:bg-"+item.color} key={index}>
                                 <button data-href={item.url} data-color={item.color}

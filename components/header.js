@@ -39,8 +39,8 @@ function Header({slogan,sloganColor,currentSlug,seo,menus}) {
                         </div>
                         <div className="float-right 2xl:mr-[105px] xl:mr-[80px] xl:pr-0 pr-6 h-full">
                             <div className="inline-flex items-center h-full">
-                                <div className="text-black font-bold uppercase text-lg lg:text-2xl">
-                                <LanguageBar currentSlug ={currentSlug}/>
+                                <div className="text-black font-normal uppercase text-lg lg:text-2xl">
+                                <LanguageBar locale={locale} currentSlug ={currentSlug}/>
                                 </div>
                                 <button 
                                  onClick={(e) => {
