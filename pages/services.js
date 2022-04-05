@@ -138,7 +138,7 @@ class ServicesPage extends React.Component {
     return (
       <div className="image_slider" key={"image_slider_"+ind}>
               <div className="border-black border-[3px]"><Image  src={item.image.url} width={item.image.width} height={item.image.height} layout="responsive" /></div>
-              <div className="text-black max-w-2xl sm:px-0 px-6 mt-5">
+              <div className="text-black max-w-[700px] sm:px-0 px-6 mt-5">
               <h3 className="text-2xl sm:text-4xl mb-2 text-white">{item.title}</h3>
               {item.content}
               </div>
@@ -148,7 +148,7 @@ class ServicesPage extends React.Component {
   </Slider> </div>}
   {step.contents.length ==1 && <div className="">
               <Image src={step.contents[0].image.url} width={step.contents[0].image.width} height={step.contents[0].image.height} layout="responsive" />
-              <div className="text-black max-w-2xl sm:px-0 px-6 mt-5">
+              <div className="text-black max-w-[700px] sm:px-0 px-6 mt-5">
               <h3 className="text-2xl sm:text-4xl mb-2 text-white">{step.contents[0].title}</h3>
               {step.contents[0].content}
               </div>
