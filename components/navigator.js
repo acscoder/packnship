@@ -56,7 +56,7 @@ if(isMobile){
                 window.NavigatorComponent.setState({isVisible:false});
            }}
             className="closenav ">
-                <span className="icon-cross text-black text-6xl"></span></button>
+                <span className="icon-close text-black lg:text-5xl text-3xl ml-5"></span></button>
                 </div>
 
                 <div className="xl:max-w-[1270px] w-full mx-auto inline-flex items-center justify-between">

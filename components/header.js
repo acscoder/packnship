@@ -37,8 +37,8 @@ function Header({slogan,sloganColor,currentSlug,seo,menus}) {
                             </div>
                         </div>
                         </div>
-                        <div className="float-right 2xl:mr-[105px] xl:mr-[80px] xl:pr-0 pr-6">
-                            <div className="inline-flex items-center lg:w-[200px] lg:h-[135px] h-[84px]">
+                        <div className="float-right 2xl:mr-[105px] xl:mr-[80px] xl:pr-0 pr-6 h-full">
+                            <div className="inline-flex items-center h-full">
                                 <div className="text-black font-bold uppercase text-lg lg:text-2xl">
                                 <LanguageBar currentSlug ={currentSlug}/>
                                 </div>
@@ -47,8 +47,8 @@ function Header({slogan,sloganColor,currentSlug,seo,menus}) {
                                    window.Transition0Component.setState({isVisible:true,color:"cascade-900"});    
                                    setTimeout(() => {window.NavigatorComponent.setState({isVisible:true});},100)
                                }}
-                                ><a className="xl:ml-10 ml-5 block xl:w-24 w-12">
-                                    <span className="icon-faltplan-weiss lg:text-5xl text-2xl text-black"></span>
+                                ><a className="ml-5 block w-8">
+                                    <span className="icon-hamburger text-3xl text-black"></span>
                                     </a></button>
                             </div>
                             
