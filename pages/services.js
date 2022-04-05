@@ -38,13 +38,13 @@ class ServicesPage extends React.Component {
     return (
       <div className="as-slider-arrow">
         <button
-          className="arrow-btn prev absolute top-[200px] 2xl:left-[-70px] left-0 text-3xl text-black"
+          className="arrow-btn prev absolute top-[200px] z-10 left-0 text-3xl text-black"
           onClick={() => this["slider"+index].slickPrev()}
         >
          <span className="icon-chevron-thin-left"></span>
         </button>
         <button
-          className="arrow-btn next absolute top-[200px] 2xl:right-[-70px] right-0 text-3xl text-black"
+          className="arrow-btn next absolute top-[200px] z-10 right-0 text-3xl text-black"
           onClick={() => this["slider"+index].slickNext()}
         >
          <span className="icon-chevron-thin-right"></span>
@@ -133,7 +133,7 @@ class ServicesPage extends React.Component {
                   >
   
   
-  {step.contents.length >1 && <div className="md:w-[500px] mx-auto relative">{_this.renderArrows(index)}<Slider {...slider_settings} ref={c => (_this['slider'+index] = c)}>
+  {step.contents.length >1 && <div className="relative">{_this.renderArrows(index)}<Slider {...slider_settings} ref={c => (_this['slider'+index] = c)}>
   {step.contents.map(function(item,ind){
     return (
       <div className="image_slider" key={"image_slider_"+ind}>
