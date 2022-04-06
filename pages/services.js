@@ -137,7 +137,7 @@ class ServicesPage extends React.Component {
   {step.contents.map(function(item,ind){
     return (
       <div className="image_slider" key={"image_slider_"+ind}>
-              <div className="border-black border-[3px] border-r-0"><Image  src={item.image.url} width={item.image.width} height={item.image.height} layout="responsive" /></div>
+              <div className="border-black border-[3px] 2xl:border-r-0"><Image  src={item.image.url} width={item.image.width} height={item.image.height} layout="responsive" /></div>
               <div className="text-black max-w-[700px] sm:px-0 px-6 mt-5">
               <h3 className="text-2xl sm:text-4xl mb-2 text-white">{item.title}</h3>
               {item.content}
