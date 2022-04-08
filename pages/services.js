@@ -36,7 +36,7 @@ class ServicesPage extends React.Component {
   }
   renderArrows = (index) => {
     return (
-      <div className="as-slider-arrow">
+      <div className="as-slider-arrow xl:block hidden">
         <button
           className="arrow-btn prev absolute top-[200px] z-10 left-0 text-3xl text-black"
           onClick={() => this["slider"+index].slickPrev()}
@@ -64,6 +64,15 @@ class ServicesPage extends React.Component {
       slide:"> div",
       slidesToShow: 1,
       slidesToScroll: 1,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            dots: true,
+            autoplay: true,
+            autoplaySpeed: 3000
+          }
+        }]
       
     };
     var _this = this
@@ -138,7 +147,7 @@ class ServicesPage extends React.Component {
     return (
       <div className="image_slider" key={"image_slider_"+ind}>
               <div className="border-black border-[3px] 2xl:border-r-0"><Image  src={item.image.url} width={item.image.width} height={item.image.height} layout="responsive" /></div>
-              <div className="text-black max-w-[700px] sm:px-0 px-6 mt-5">
+              <div className="text-black max-w-[700px] mt-5">
               <h3 className="text-2xl sm:text-4xl mb-2 text-white">{item.title}</h3>
               {item.content}
               </div>
@@ -166,7 +175,34 @@ class ServicesPage extends React.Component {
         </div>
       </section>
     
-   
+      <div className="xl:hidden block">
+      {this.props.data.data_grid.steps &&this.props.data.data_grid.steps.map(function(step,index){
+        if(index>0){
+        return (<div key={"step_m_"+index}>
+         <div className={"hiw_item_mobile md:p-10 p-5 h-full h-full-block bg-"+step.background_color+"-600"} >
+        <div className="border-4 border-black h-full">
+          
+       
+{step.contents.length ==1 && <div className="">
+              <Image src={step.contents[0].image.url} width={step.contents[0].image.width} height={step.contents[0].image.height} layout="responsive" />
+              <div className="xl:max-w-2xl px-6 mb-5">
+              
+             
+              <h3 className="text-2xl mt-3 sm:text-4xl mb-2 text-white">{step.contents[0].title}</h3>
+          
+             
+              <div className="text-black">{step.contents[0].content} </div>
+              </div>
+              </div>}
+
+
+        </div>
+      </div>
+        </div>)
+}
+
+      })}
+    </div>
 
       <Footer
         address={this.props.options.address}
