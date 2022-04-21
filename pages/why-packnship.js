@@ -15,13 +15,13 @@ import React from "react";
       return (
         <div className="as-slider-arrow">
           <button
-            className="arrow-btn prev absolute top-[200px] 2xl:left-[-70px] left-0 text-3xl text-black"
+            className="arrow-btn top-center prev absolute  2xl:left-[-70px] left-0 text-3xl text-black"
             onClick={() => this.slider.slickPrev()}
           >
            <span className="icon-chevron-thin-left"></span>
           </button>
           <button
-            className="arrow-btn next absolute top-[200px] 2xl:right-[-70px] right-0 text-3xl text-black"
+            className="arrow-btn top-center next absolute  2xl:right-[-70px] right-0 text-3xl text-black"
             onClick={() => this.slider.slickNext()}
           >
            <span className="icon-chevron-thin-right"></span>

@@ -62,7 +62,10 @@ b, strong {
 .slick-dots > li.slick-active > button{
   background-color: #ffffff!important;
 }
-
+.as-slider-arrow .arrow-btn.top-center{
+  top: 50%;
+  margin-top: -16px
+}
 .bg-cascade .slick-dots > li > button{
   background-color: #56897d;
 }
