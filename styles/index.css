@@ -29,6 +29,10 @@
   margin-top:10px;
   margin-bottom:10px;
 }
+.slick-slider > .slick-list > .slick-track{
+  display: inline-flex;
+  align-items: center;
+}
  .slick-dots{
   list-style: none;
   padding-left: 0;
