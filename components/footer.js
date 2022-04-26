@@ -34,6 +34,7 @@ export default function Footer({address,email,hotline}) {
                         <a className="2xl:text-6xl xl:text-5xl lg:text-4xl text-3xl"><span className="icon-logo"></span></a>
                         </Link>
                        </div>
+                       <div className="font-base"><a href={"/sitemap.xml"} target="_blank">Sitemap</a> | <Link href="/impressum"><a>Impressum</a></Link></div>
                     </div>
                     <div className="col-span-1 py-2">
                         <div className="h-full inline-flex items-center">
