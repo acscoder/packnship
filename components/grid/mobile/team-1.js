@@ -6,14 +6,9 @@ export default function GridTeam1Mobile({ data,index }) {
   return (
     <>
     
-    <div className="text-[28px] my-5 text-white">
-              <strong
-                className={
-                  "font-bold pr-2 text-" + data.background_color + "-800"
-                }
-              >
-                0{index}
-              </strong>
+    <div className="xl:text-4xl text-2xl font-light my-5 text-white">
+             
+             
               {data.page_title}
             </div>
         
@@ -23,8 +18,8 @@ export default function GridTeam1Mobile({ data,index }) {
         <Image src={data.thumbnail[0]} width={data.thumbnail[1]} height={data.thumbnail[2]} layout="responsive" />
         </motion.figure>
           }
-          {data.title && <motion.h1 className="xl:text-4xl text-2xl mb-3 font-light">{data.title}</motion.h1>}
-          {data.content && <div className="text-black">{parse(data.content)}</div>}
+       
+       
         {data.data_grid.members.map(function(member,index){
           return (
           <div className="border-[3px] p-7 border-black my-5 text-base" key={"member_1_"+index.toString()}>

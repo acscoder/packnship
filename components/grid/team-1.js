@@ -25,8 +25,8 @@ export default function GridTeam1({ data }) {
               <p className="font-medium mb-2">{member.role}</p>
               {member.content&& <p className="text-black">{parse(member.content)}</p>}
               <div className="font-medium md:inline-flex">
-                <div className="mr-10 mt-4"><span className="icon-mail mr-2"></span>{member.email}</div>
-                <div className="mt-4"><span className="icon-mobile mr-2"></span>{member.phone_number}</div>
+              {member.email&& <div className="mr-10 mt-4"><span className="icon-mail mr-2"></span>{member.email}</div>}
+                {member.phone_number&& <div className="mt-4"><span className="icon-mobile mr-2"></span>{member.phone_number}</div>}
               </div>
             </div>
           </div>

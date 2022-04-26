@@ -94,7 +94,7 @@ import React from "react";
           </div>
         </div>
 
-        <div className="2xl:mx-[115px] 2xl:px-0 px-6 relative">
+        <div className="2xl:mx-[115px] 2xl:px-0 px-6 relative slider-centered">
         {this.renderArrows()}
         <Slider {...slider_settings} ref={c => (this.slider = c)}>
         {items.length && items.map(function(item_group,ind){
