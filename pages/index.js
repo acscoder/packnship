@@ -10,7 +10,7 @@ function HomePage({ data,options }) {
     <>
            <LayoutSimple data={data} options={options}>
             <motion.figure initial={{  opacity: 0 }}
-  animate={{ opacity: 1 }} className="featured-image mt-6" layoutId="image">
+  animate={{ opacity: 1 }} className="featured-image my-6" layoutId="image">
             <Image src={data.thumbnail[0]} width={data.thumbnail[1]} height={data.thumbnail[2]} layout="responsive" />
             </motion.figure>
             <div className="2xl:px-[105px] xl:px-[80px] lg:px-[40px] px-6">
