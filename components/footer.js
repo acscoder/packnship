@@ -3,26 +3,8 @@ import Script from 'next/script'
 export default function Footer({address,email,hotline}) {
     const parse = require('html-react-parser');
     return ( 
-    <footer>
-     <div className="text-center w-full fixed sm:bottom-1 bottom-0 left-0 h-7" id="show-footer">
-        <button
-         onClick={(e) => {
-             
-             var _this = document.getElementById("as_show_footer");
-             
-             if(_this.classList.contains('rotate-180')){
-                _this.classList.remove('rotate-180');
-                document.getElementById("footer-bar").classList.add("hidden");
-             }else{
-                _this.classList.add('rotate-180');
-            document.getElementById("footer-bar").classList.remove("hidden");
-            document.getElementById("footer-bar").scrollIntoView({behavior: "smooth"});
-            }  
-        }}
-        className="transition" id="as_show_footer">
-          <span className="icon-chevron-down mx-auto text-3xl"></span>
-        </button>
-    </div>
+    <footer className="relative">
+   
     <div id="footer-bar" className="bg-pink text-white xl:p-10 p-5 hidden">
     <div className="border-4 border-black relative lg:h-[156px]">
         <div className="2xl:mx-[105px] lg:mt-[18px]">
@@ -59,9 +41,31 @@ export default function Footer({address,email,hotline}) {
         </div>
     </div>
     </div>
+    <div className="text-center w-full absolute bottom-0" id="show-footer">
+        <button
+         onClick={(e) => {
+             
+             var _this = document.getElementById("as_show_footer");
+             
+             if(_this.classList.contains('rotate-180')){
+                _this.classList.remove('rotate-180');
+                document.getElementById("footer-bar").classList.add("hidden");
+             }else{
+                _this.classList.add('rotate-180');
+            document.getElementById("footer-bar").classList.remove("hidden");
+            document.getElementById("footer-bar").scrollIntoView({behavior: "smooth"});
+            }  
+        }}
+        className="transition" id="as_show_footer">
+          <span className="icon-chevron-down mx-auto text-3xl"></span>
+        </button>
+    </div>
+   
    <Script>
    {`window.Transition1Component.setState({isVisible:false});window.NavigatorComponent.setState({isVisible:false});`}
    </Script>
+
+
     </footer>
    
     )
