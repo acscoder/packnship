@@ -34,7 +34,7 @@
   align-items: center;
 }
 .our_team_slider .slick-slider {
-  max-height: 620px!important;
+  max-height: 640px!important;
   overflow-y: auto;
 }
 .our_team_slider .slick-slider > .slick-list > .slick-track .slick-slide>div{
