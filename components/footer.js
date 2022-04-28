@@ -41,7 +41,7 @@ export default function Footer({address,email,hotline}) {
         </div>
     </div>
     </div>
-    <div className="text-center w-full absolute bottom-0" id="show-footer">
+    <div className="text-center w-full absolute bottom-0 overflow-hidden xl:h-auto h-[27px]" id="show-footer">
         <button
          onClick={(e) => {
              
