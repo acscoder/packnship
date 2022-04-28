@@ -109,3 +109,12 @@ b, strong {
   outline: 0px solid transparent;
   border-radius:7px ;
 }
+
+.min-h-screen--10{
+  min-height: calc(100vh - 80px);
+}
+@media (max-width: 1200px) {
+  .min-h-screen--10{
+    min-height: calc(100vh - 40px);
+  }
+}

@@ -24,15 +24,15 @@ function Header({slogan,sloganColor,currentSlug,seo,menus}) {
     
 <header className="header border-b-[3px] border-black ">
               
-                    <div className="inline-block w-full lg:h-[135px] h-[84px]">
+                    <div className="inline-block w-full lg:h-[135px] lg:mt-0 mt-3 h-16">
                         <div className="float-left 2xl:w-[1000px] xl:w-[800px]">
-                        <div className="logo inline-flex items-center lg:h-[142px] h-[84px] 2xl:px-[105px] xl:px-[80px] lg:px-[40px] px-6 border-black lg:border-r-[3px] float-left">
+                        <div className="logo inline-flex items-center lg:h-[142px] h-16 2xl:px-[105px] xl:px-[80px] lg:px-[40px] px-6 border-black lg:border-r-[3px] float-left">
                         <Link href="/">
                             <a className="2xl:text-6xl xl:text-5xl lg:text-4xl text-3xl"><span className="icon-logo"></span></a>
                         </Link>
                         </div>
                         <div className="xl:block hidden">
-                            <div className="py-8 pl-16 border-black h-full inline-flex items-center lg:h-[135px] h-[84px]">
+                            <div className="py-8 pl-16 border-black h-full inline-flex items-center lg:h-[135px] h-16">
                                 <h2 id="slogan" className={"2xl:text-[28px] xl:text-2xl font-normal text-"+ sloganColor }>{slogan}</h2>  
                             </div>
                         </div>

@@ -4,7 +4,7 @@ export default function Footer({address,email,hotline}) {
     const parse = require('html-react-parser');
     return ( 
     <footer>
-     <div className="text-center w-full fixed sm:bottom-1 bottom-0 left-0 " id="show-footer">
+     <div className="text-center w-full fixed sm:bottom-1 bottom-0 left-0 h-7" id="show-footer">
         <button
          onClick={(e) => {
              

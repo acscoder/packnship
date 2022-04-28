@@ -4,6 +4,7 @@ import Slider from "react-slick"
 import LayoutSimple from "../components/layout-simple";
 import Head from 'next/head'
 import React from "react";
+import { MobileView, BrowserView } from "react-device-detect"
 
   class ContactPage extends React.Component {
     constructor() {
@@ -56,6 +57,7 @@ import React from "react";
   var _this = this
   return (
     <>
+    <BrowserView>
      <Head>
      <link
   rel="stylesheet"
@@ -129,6 +131,74 @@ import React from "react";
           
         </div>
       </LayoutSimple>
+      </BrowserView>
+      <MobileView>
+      <LayoutSimple data={this.props.data} options={this.props.options}>
+        <div className="lg:grid lg:grid-cols-3 lg:my-12 my-6">
+          {this.props.data.thumbnail && (
+            <motion.figure
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="lg:col-span-2 lg:order-2"
+              layoutId="image"
+            >
+              <Image
+                src={this.props.data.thumbnail[0]}
+                width={this.props.data.thumbnail[1]}
+                height={this.props.data.thumbnail[2]}
+                layout="responsive"
+              />
+            </motion.figure>
+          )}
+
+          <div className="2xl:ml-[115px] lg:col-span-1 lg:order-1 h-full inline-flex items-center lg:mt-0 mt-7">
+          <div className="lg:px-0 px-6">
+              {_this.props.data.title && (
+                <motion.h1 className="2xl:text-6xl xl:text-4xl text-3xl mb-3 font-light">
+                  {_this.props.data.title}
+                </motion.h1>
+              )}
+             <div className="text-black">{parse(_this.props.data.content)}</div>
+            </div>
+          </div>
+        </div>
+
+        <div className="2xl:mx-[115px] 2xl:px-0 px-6 relative ">
+       
+        {items.length && items.map(function(item_group,ind){
+          return (
+            <div className="item_group w-full" key={"item_group_"+ind}>
+              
+              <div className={"lg:grid lg:gap-10 gap-5 lg:grid-cols-"+item_group.length}>
+              {item_group.length && item_group.map(function(item,index){
+              return (
+                <div
+              className={
+                "border-[3px] xl:py-8 xl:pl-10 xl:pr-5 p-5 lg:mb-4 mb-5 border-black transition-colors hover:bg-" +
+                _this.props.data.background_color +
+                "-700"
+              }
+              key={"item_"+index}
+            >
+              <div>
+                <h3 className="font-light lg:text-3xl text-2xl mb-3">{item.title} </h3>
+                <div className="text-black">
+                {parse(item.content)}
+                </div>
+              
+              </div>
+            </div>
+              )
+              })}
+              </div>
+            </div>
+          )
+          })} 
+        
+          
+        </div>
+      </LayoutSimple>
+      </MobileView>
     </>
   );
         }

@@ -11,7 +11,7 @@ function AboutPage({ data,options }) {
             <div className="2xl:mx-[200px] xl:mx-[100px] px-6 content_min_height flex items-center">
                 <div className=" md:gap-x-10 lg:gap-x-20">
                     
-                        <div className="">
+                        <div className="mt-6">
                         
                         {data.thumbnail[0]&&<img className="max-w-[600px] mb-5" src={data.thumbnail[0]} width={data.thumbnail[1]} height={data.thumbnail[2]} layout="responsive" />}                    
              
