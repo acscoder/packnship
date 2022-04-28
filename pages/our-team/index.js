@@ -19,7 +19,7 @@ function TeamPage({ data, options }) {
     slide:"> div",
     slidesToShow: 1,
     slidesToScroll: 1,
-    adaptiveHeight: false  
+    adaptiveHeight: true  
   };
   return (
     <>
