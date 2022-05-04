@@ -56,13 +56,13 @@ export default function GridTeamHiring({ data }) {
             <div className="grid md:grid-cols-3 gap-5 mt-5">
               {job_group.length && job_group.map(function(job,index){
                 return (
-              <div className="border-[3px] p-5 border-black text-base hover:bg-coriander-700 transition-colors" key={"job_"+index}>  
+              <div className={job.url?"col-span-1 border-[3px] p-5 border-black text-base hover:bg-coriander-700 transition-colors":"col-span-2 border-[3px] p-5 border-black text-base hover:bg-coriander-700 transition-colors"} key={"job_"+index}>  
                   <div>     
                   <h4 className="font-medium text-lg">{job.title}</h4>
                   <p className="mb-2">{job.sub_title}</p>
                   
                   {job.content&& <p className="text-black">{parse(job.content)}</p>}
-                  {job.url?<a href={job.url} target="_blank" className="font-semibold">{getStranslatedString("Jetzt bewerben")}</a>:<p className="text-black">{getStranslatedString("Kommt bald")}</p>}                  
+                  {job.url?<a href={job.url} target="_blank" className="font-semibold">{getStranslatedString("Jetzt bewerben")}</a>:''}                  
                   </div>
               </div>   
             )})} 
