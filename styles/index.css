@@ -114,6 +114,11 @@ b, strong {
 .min-h-screen--10{
   min-height: calc(100vh - 80px);
 }
+@media (min-width: 1700px) {
+  .xl4-inline-flex{
+    display: inline-flex;
+  }
+}
 @media (max-width: 1200px) {
   .min-h-screen--10{
     min-height: calc(100vh - 40px);
