@@ -19,6 +19,8 @@ function TeamPage({ data, options }) {
     slide:"> div",
     slidesToShow: 1,
     slidesToScroll: 1,
+    draggable:true,
+    swipeToSlide:true,
     adaptiveHeight: true  
   };
   return (

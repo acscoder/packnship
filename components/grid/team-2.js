@@ -70,7 +70,7 @@ export default function GridTeam2({ data }) {
                 <p className="font-medium mb-1">{member.role}</p>
                 {false&&<p className="mb-8">{parse(member.content)}</p>}
                   <div className="font-medium">
-                    <div className="mt-2"><span className="icon-mail mr-2"></span><a mailto={member.email}>{member.email}</a></div>
+                    <div className="mt-2"><span className="icon-mail mr-2"></span><a href={"mailto:"+member.email}>{member.email}</a></div>
                     <div className="mt-2"><span className="icon-mobile mr-2"></span>{member.phone_number}</div>
                   </div>   
                 </div>   
