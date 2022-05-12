@@ -77,7 +77,7 @@ import { MobileView, BrowserView } from "react-device-detect"
             </motion.figure>
           )}
 
-          <div className="2xl:ml-[115px] lg:col-span-1 lg:order-1 h-full inline-flex items-center lg:mt-0 mt-7">
+          <div className="2xl:ml-[115px] xl:ml-[80px] lg:ml-[40px] lg:col-span-1 lg:order-1 h-full inline-flex items-center lg:mt-0 mt-7">
           <div className="lg:px-0 px-6">
               {_this.props.data.title && (
                 <motion.h1 className="2xl:text-6xl xl:text-4xl text-3xl mb-3 font-light">

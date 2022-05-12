@@ -7,9 +7,9 @@ export default function Footer({address,email,hotline}) {
    
     <div id="footer-bar" className="bg-pink text-white xl:p-10 p-5 hidden">
     <div className="border-4 border-black relative lg:h-[156px]">
-        <div className="2xl:mx-[105px] lg:mt-[18px]">
+        <div className="2xl:px-[105px] xl:px-[80px] lg:px-[40px] px-6 lg:mt-[18px]">
             <div className="lg:grow lg:mr-[320px]">
-                <div className="xl:grid xl:grid-cols-3 xl:gap-x-10 2xl:grid-cols-4 2xl:gap-x-20 lg:inline-flex h-full items-center lg:text-left text-center lg:py-0 py-5">
+                <div className="md:grid md:grid-cols-3 lg:gap-x-10 xl:grid-cols-4 xl:gap-x-20 md:inline-flex h-full items-center md:text-left text-center lg:py-0 py-5">
                     <div className="2xl:col-span-2 col-span-1 py-2">
                         <div className="logo">
                         <Link href="/">
