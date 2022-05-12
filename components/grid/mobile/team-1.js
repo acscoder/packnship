@@ -32,7 +32,7 @@ export default function GridTeam1Mobile({ data,index }) {
               <p className="font-medium mb-2">{member.role}</p>
               {member.content&& <p className="text-black">{parse(member.content)}</p>}
               <div className="font-medium md:inline-flex">
-                <div className="mr-10 mt-4"><span className="icon-mail mr-2"></span>{member.email}</div>
+                <div className="mr-10 mt-4"><span className="icon-mail mr-2"></span><a mailto="member.email">{member.email}</a></div>
                 {member.phone_number&&<div className="md:mt-4 mt-2"><span className="icon-mobile mr-2"></span>{member.phone_number}</div>}
               </div>
             </div>
