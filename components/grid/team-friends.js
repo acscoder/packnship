@@ -22,8 +22,8 @@ export default function GridTeamFriends({ data }) {
           return (
           
           <div className="border-[3px] py-7 border-black text-base text-center relative" key={"friend_"+index}>
-              <figure className="mx-auto h-full inline-flex items-center">
-              <Image className="min-w-full" src={item.image.url} width={item.image.width/2} height={item.image.height/2} layout="fixed" />
+              <figure className="mx-auto px-2 h-full inline-flex items-center">
+              <Image src={item.image.url} width={item.image.width/2} height={item.image.height/2}  />
               </figure>
               <div className="text-left bg-aqua-700 absolute p-5  top-0 left-0 opacity-0 hover:opacity-100 transition-opacity duration-700 h-full w-full">
                 <h4 className="font-medium text-lg mb-1">{item.title}</h4>
