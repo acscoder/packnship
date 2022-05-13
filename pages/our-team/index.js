@@ -5,6 +5,7 @@ import GridTeam1 from '../../components/grid/team-1'
 import GridTeam1Mobile from '../../components/grid/mobile/team-1'
 import Slider from "react-slick"
 import Head from 'next/head'
+import Script from 'next/script'
 import { MobileView, BrowserView } from "react-device-detect"
 
 function TeamPage({ data, options }) {
@@ -35,7 +36,7 @@ function TeamPage({ data, options }) {
 />
      </Head>
       <LayoutTeam data={data} options={options}>
-        <div className="our_team_slider scrollbar">   
+        <div className="our_team_slider scrollbar" id="our_team_slider">   
           <Slider {...slider_settings}>
             <GridSimple data={data} />
             {data.data_grid.page.length&&data.data_grid.page.map(function(sub_page,index){   
@@ -57,6 +58,9 @@ function TeamPage({ data, options }) {
               })} 
         </LayoutTeam>
       </MobileView>
+      <Script>
+   {`document.getElementById("next-slider").addEventListener("click", function(){ document.getElementsByClassName("slick-dots")[0].getElementsByTagName("button")[1].click(); });`}
+   </Script>
     </>
   );
 }

@@ -110,7 +110,9 @@ b, strong {
   outline: 0px solid transparent;
   border-radius:7px ;
 }
-
+.btn{
+  cursor: pointer;
+}
 .min-h-screen--10{
   min-height: calc(100vh - 80px);
 }
@@ -122,5 +124,10 @@ b, strong {
 @media (max-width: 1200px) {
   .min-h-screen--10{
     min-height: calc(100vh - 40px);
+  }
+}
+@media (max-width: 1024px) {
+  .md-hidden{
+    display: none!important;
   }
 }
