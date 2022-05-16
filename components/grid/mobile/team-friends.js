@@ -30,7 +30,7 @@ export default function GridTeamFriendsMobile({ data ,index}) {
           {data.data_grid.items && data.data_grid.items.map(function(item,index){
           return (
           
-          <div className="border-[3px] p-7 border-black text-base min-h-32 text-center relative" key={"friend_"+index}>
+          <div className="border-[3px] p-7 border-black text-base min-h-[125px] text-center relative" key={"friend_"+index}>
               <figure className="mx-auto h-full inline-flex items-center">
               <Image src={item.image.url} width={item.image.width/2} height={item.image.height/2} layout="fixed" />
               </figure>
