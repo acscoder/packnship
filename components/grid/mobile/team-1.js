@@ -6,11 +6,7 @@ export default function GridTeam1Mobile({ data,index }) {
   return (
     <>
     
-    <div className="xl:text-4xl text-2xl font-light my-5 text-white">
-             
-             
-              {data.page_title}
-            </div>
+   
         
         {data.thumbnail[0] &&
             <motion.figure initial={{  opacity: 0 }}

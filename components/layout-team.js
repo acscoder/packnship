@@ -55,7 +55,7 @@ export default function LayoutTeam({ children,data,options }) {
           comp = <GridTeam1Mobile data={data.sub_page[page]} index={index+2}/>;
           break; 
           case "team-2":
-          comp = <GridTeam2Mobile data={data.sub_page[page]} index={index+2}/>;
+          comp = <GridTeam1Mobile data={data.sub_page[page]} index={index+2}/>;
           break; 
           case "hiring":
           comp = <GridTeamHiringMobile data={data.sub_page[page]} index={index+2}/>;
