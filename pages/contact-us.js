@@ -52,7 +52,7 @@ function ContactPage({ data, options }) {
               key={"contact_item_"+index}
             >
               <div>
-                <h3 className="font-light lg:text-3xl text-2xl mb-3">{item.title} </h3>
+                <h3 className="font-light lg:text-3xl text-2xl mb-3 xl:min-h-[72px]">{item.title} </h3>
                 <div className="text-black">
                 {parse(item.content)}
                 </div>

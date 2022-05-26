@@ -46,7 +46,7 @@ export default function Footer({address,email,hotline}) {
             </div>
         </div>
     </div>
-    <div className="text-base absolute bottom-[10px] right-0 xl:pr-10 pr-5"><Link href="/sitemap"><a target="_blank">Sitemap</a></Link> | <Link href="/impressum"><a target="_blank">Impressum</a></Link> | <a href="https://1000k.berlin/" target="_blank" rel="nofollow">Site: 1000K.berlin</a></div>
+    <div className="text-base md:absolute text-center xl:bottom-[10px] bottom-0 right-0 xl:pr-10 pr-5"><Link href="/sitemap"><a target="_blank">Sitemap</a></Link> | <Link href="/impressum"><a target="_blank">Impressum</a></Link> | <a href="https://1000k.berlin/" target="_blank" rel="nofollow">Site: 1000K.berlin</a></div>
     
     </div>
 
