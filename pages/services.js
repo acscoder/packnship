@@ -160,7 +160,7 @@ class ServicesPage extends React.Component {
               <Image src={step.contents[0].image.url} width={step.contents[0].image.width} height={step.contents[0].image.height} layout="responsive" />
               <div className="text-black max-w-[700px] sm:px-0 px-6 mt-5">
               <h3 className="text-2xl sm:text-4xl mb-2 text-white">{step.contents[0].title}</h3>
-              {step.contents[0].content}
+              {parse(step.contents[0].content)}
               </div>
               </div>}
           
@@ -192,7 +192,7 @@ class ServicesPage extends React.Component {
               <h3 className="text-2xl mt-3 sm:text-4xl mb-2 text-white">{step.contents[0].title}</h3>
           
              
-              <div className="text-black">{step.contents[0].content} </div>
+              <div className="text-black"> {parse(step.contents[0].content)}</div>
               </div>
               </div>}
 
