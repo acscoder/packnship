@@ -41,7 +41,7 @@ export default function Footer({address,email,hotline}) {
             <Link href="/contact-us">
             <a className="lg:text-3xl text-2xl font-normal pb-2 block mt-10">Let’s Talk</a>
             </Link>
-            <div className="text-base"><Link href="/sitemap"><a>Sitemap</a></Link> | <Link href="/impressum"><a>Impressum</a></Link> | <a href="https://1000k.berlin/" target="_blank" rel="nofollow">Site: 1000K.berlin</a></div>
+            <div className="text-base"><Link href="/sitemap"><a target="_blank">Sitemap</a></Link> | <Link href="/impressum"><a target="_blank">Impressum</a></Link> | <a href="https://1000k.berlin/" target="_blank" rel="nofollow">Site: 1000K.berlin</a></div>
             </div>
         </div>
     </div>

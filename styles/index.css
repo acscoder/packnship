@@ -116,6 +116,12 @@ b, strong {
 .min-h-screen--10{
   min-height: calc(100vh - 80px);
 }
+.sitemaplist ul li{
+padding:5px 0;
+}
+.sitemaplist ul li ul{
+ padding-left: 20px;
+}
 @media (min-width: 1700px) {
   .xl4-inline-flex{
     display: inline-flex;

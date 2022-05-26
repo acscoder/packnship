@@ -18,7 +18,7 @@ function SitemapPage({ data,options }) {
                             <h1 className="2xl:text-6xl xl:text-5xl text-4xl font-light mb-5">{data.title}</h1>            
                    
 
-                            <div className="text-black text-block">
+                            <div className="text-black text-block sitemaplist 2xl:text-2xl xl:text-xl">
                     {parse(data.content)}                        
      
                         </div>        
