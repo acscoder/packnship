@@ -16,7 +16,7 @@ export default function Footer({address,email,hotline}) {
                         <a className="2xl:text-6xl xl:text-5xl lg:text-4xl text-3xl"><span className="icon-logo"></span></a>
                         </Link>
                        </div>
-                       <div className="2xl:text-3xl xl:text-2xl text-xl">Beautiful Logistics</div>
+                       <div className="2xl:text-3xl xl:text-2xl text-xl">beautiful logistics</div>
                     
                     </div>
                     <div className="col-span-1 py-2">
