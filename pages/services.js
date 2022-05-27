@@ -69,8 +69,7 @@ class ServicesPage extends React.Component {
           breakpoint: 1024,
           settings: {
             dots: true,
-            autoplay: true,
-            autoplaySpeed: 3000
+            
           }
         }]
       
