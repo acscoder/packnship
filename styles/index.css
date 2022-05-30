@@ -122,7 +122,7 @@ padding:5px 0;
 .sitemaplist ul li ul{
  padding-left: 20px;
 }
-@media (min-width: 1700px) {
+@media (min-width: 1770px) {
   .xl4-inline-flex{
     display: inline-flex;
   }
