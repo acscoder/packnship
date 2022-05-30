@@ -6,6 +6,6 @@ module.exports = {
   },
   trailingSlash: true,
   images: {
-    domains: ['packnship.digitalonda.com']
+    domains: ['packnship.de']
   },
 }
