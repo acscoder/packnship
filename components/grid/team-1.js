@@ -25,9 +25,9 @@ export default function GridTeam1({ data }) {
               <p className="font-medium mb-2">{member.role}</p>
               {member.content&& <p className="text-black">{parse(member.content)}</p>}
               <div className="font-medium xl4-inline-flex">
-              {member.email&& <div className="mr-10 mt-4"><span className="icon-mail mr-2"></span><a href={"mailto:"+member.email} rel="nofollow">{member.email}</a></div>}
-                {member.phone_number&& <div className="mt-4"><span className="icon-mobile mr-2"></span><a href={"tel:"+member.phone_number} rel="nofollow">{member.phone_number}</a></div>}
-                {member.linkedin&& <div className="mr-10 mt-4"><span className="icon-megaphone mr-2"></span><a href={member.linkedin} rel="nofollow" target="_blank">Linkedin</a></div>}
+              {member.email&& <div className="mr-3 mt-4"><span className="icon-mail mr-2"></span><a href={"mailto:"+member.email} rel="nofollow">{member.email}</a></div>}
+                {member.phone_number&& <div className="mt-4 mr-3"><span className="icon-mobile mr-2"></span><a href={"tel:"+member.phone_number} rel="nofollow">{member.phone_number}</a></div>}
+                {member.linkedin&& <div className=" mt-4"><span className="icon-megaphone mr-2"></span><a href={member.linkedin} rel="nofollow" target="_blank">Linkedin</a></div>}
               
               </div>
             </div>
