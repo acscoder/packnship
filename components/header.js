@@ -4,7 +4,7 @@ import React from "react"
 import { useRouter,withRouter } from 'next/router'
 import Navigator from "../components/navigator"
 import LanguageBar from "../components/language-bar"
-
+import CookieConsent from "react-cookie-consent";
 
 function Header({slogan,sloganColor,currentSlug,seo,menus}) {
     if(!currentSlug){currentSlug = '/';}
@@ -21,7 +21,23 @@ function Header({slogan,sloganColor,currentSlug,seo,menus}) {
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
         {parse(seo)}
       </Head>
-    
+      <CookieConsent
+  location="bottom"
+  buttonText="Zulassen"
+  enableDeclineButton={true}
+  declineButtonText="Ablehnen"
+  cookieName="psAcceptCookieName"
+  style={{ background: "#2B373B" }}
+  declineButtonStyle={{ color: "#4e503b",background: "#ddc4bf", fontSize: "16px" }}
+  buttonStyle={{ color: "#4e503b",background: "#e5d8c1", fontSize: "16px" }}
+  expires={150}
+>
+    <div className="text-base">
+<h4 className="font-medium">Diese Webseite verwendet Cookies </h4>
+Wir verwenden Cookies, um Inhalte und Anzeigen zu personalisieren, Funktionen für soziale Medien anbieten zu können und die Zugriffe auf unsere Website zu analysieren. 
+</div>
+</CookieConsent>
+
 <header className="header border-b-[3px] border-black ">
               
                     <div className="inline-block w-full lg:h-[135px] lg:mt-0 mt-3 h-16">
