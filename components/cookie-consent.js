@@ -56,6 +56,7 @@ export default class CookieConsent extends React.Component{
             </div>
             <div className="flex lg:justify-center justify-start items-center lg:mt-0 mt-4">
           <button className={"border border-yellow p-3 md:min-w-[150px] min-w-[110px] md:text-lg text-base text-yellow font-medium hover:text-black hover:bg-yellow"} onClick={() => {_this.setState({accept: "allow"});
+          Cookies.set('CookieConsentAccept',"allow", { expires: 365 });
           if(document.getElementById('ConsentAcceptChoiceEssential').checked){_Cookies.set('CookieConsentAcceptEssential',"allow", { expires: 365 })}else{_Cookies.set('CookieConsentAcceptEssential',"deny", { expires: 365 })};
           if(document.getElementById('ConsentAcceptChoiceAnalytics').checked){_Cookies.set('CookieConsentAcceptAnalytics',"allow", { expires: 365 })}else{_Cookies.set('CookieConsentAcceptAnalytics',"deny", { expires: 365 })};
           if(document.getElementById('ConsentAcceptChoiceAdvertising').checked){_Cookies.set('CookieConsentAcceptAdvertising',"allow", { expires: 365 })}else{_Cookies.set('CookieConsentAcceptAdvertising',"deny", { expires: 365 })};
