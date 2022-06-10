@@ -5,7 +5,7 @@ export default function LayoutSimple({ children,data,options }) {
     <>
     <section id="main-content" className={"min-h-screen text-white xl:p-10 p-5 bg-"+data.background_color}>
         <div className="border-4 border-black min-h-screen--10 relative md:h-auto h-full">
-        <Header slogan={data.slogan} sloganColor={data.slogan_color}  currentSlug={options.currentSlug} seo={data.seo} menus={options.menus}/>
+        <Header slogan={data.slogan} sloganColor={data.slogan_color}  currentSlug={options.currentSlug} seo={data.seo} menus={options.menus} consenttitle={options.cookie_preferences_title} consentcontent={options.cookie_preferences}/>
         {children}
         </div>
     </section>

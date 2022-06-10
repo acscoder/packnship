@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Script from 'next/script'
+
 export default function Footer({address,email,hotline}) {
     const parse = require('html-react-parser');
     return ( 
