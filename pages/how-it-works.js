@@ -51,7 +51,7 @@ class HIWPage extends React.Component {
         }
       >
         <div className="border-4 border-black xl:min-h-full relative">
-          <Header slogan={this.props.data.slogan} sloganColor={this.state.slogan_color} currentSlug={this.props.options.currentSlug} seo={this.props.data.seo} menus={this.props.options.menus} consenttitle={options.cookie_preferences_title} consentcontent={options.cookie_preferences}/>
+          <Header slogan={this.props.data.slogan} sloganColor={this.state.slogan_color} currentSlug={this.props.options.currentSlug} seo={this.props.data.seo} menus={this.props.options.menus} consenttitle={this.props.options.cookie_preferences_title} consentcontent={this.props.options.cookie_preferences}/>
 
           <div className="2xl:px-0 px-6 2xl:min-h-[600px] ">
             <div className="lg:grid grid-cols-2 2xl:my-12 my-8">
